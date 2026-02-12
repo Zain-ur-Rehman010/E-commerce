@@ -33,7 +33,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'E-commerce.urls'
+ROOT_URLCONF = 'urls'
 
 TEMPLATES = [
     {
@@ -52,7 +52,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'E-commerce.wsgi.application'
+WSGI_APPLICATION = 'wsgi.application'
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
