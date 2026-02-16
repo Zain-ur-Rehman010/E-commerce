@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - H&G Handmade Store</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="../../assets/images/favicon.svg">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="contact-page">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__container">
+                <!-- Logo -->
+                <a href="../../index.html" class="header__logo">
+                    H&G
+                </a>
+
+                <!-- Main Navigation (Desktop) -->
+                <nav class="header__nav">
+                    <a href="../../index.html" class="header__nav-link">Home</a>
+                    <a href="../shop/index.html" class="header__nav-link">Shop</a>
+                    <a href="about.html" class="header__nav-link">About</a>
+                    <a href="blog.html" class="header__nav-link">Blog</a>
+                    <a href="contact.html" class="header__nav-link active">Contact</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Search -->
+                    <button class="header__action-btn" id="searchBtn" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+
+                    <!-- Account -->
+                    <button class="header__action-btn" id="accountBtn" aria-label="My Account">
+                        <i class="fas fa-user"></i>
+                    </button>
+
+                    <!-- Wishlist -->
+                    <button class="header__action-btn" id="wishlistBtn" aria-label="Wishlist">
+                        <i class="fas fa-heart"></i>
+                        <span class="header__badge" id="wishlistCount">0</span>
+                    </button>
+
+                    <!-- Cart -->
+                    <button class="header__action-btn" id="cartBtn" aria-label="Shopping Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="header__badge" id="cartCount">0</span>
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button class="header__mobile-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__header">
+            <div class="header__logo">H&G</div>
+            <button class="mobile-menu__close" id="mobileMenuClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-menu__nav">
+            <a href="../../index.html" class="mobile-menu__nav-link">Home</a>
+            <a href="../shop/index.html" class="mobile-menu__nav-link">Shop</a>
+            <a href="about.html" class="mobile-menu__nav-link">About</a>
+            <a href="blog.html" class="mobile-menu__nav-link">Blog</a>
+            <a href="contact.html" class="mobile-menu__nav-link">Contact</a>
+        </nav>
+    </div>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="contact-hero">
+      <div class="container">
+        <div class="contact-hero__content">
+          <span class="contact-hero__label">Get in Touch</span>
+          <h1>We'd Love to Hear From You</h1>
+          <p>Have questions about our handcrafted products? Want to collaborate? Or just want to say hello? We're here to help!</p>
+        </div>
+      </div>
+      <div class="contact-hero__shapes">
+        <div class="shape shape--1"></div>
+        <div class="shape shape--2"></div>
+        <div class="shape shape--3"></div>
+      </div>
+    </section>
+
+    <!-- Contact Info Cards -->
+    <section class="contact-info py-5">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="info-card">
+              <div class="info-card__icon">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <h3>Visit Our Studio</h3>
+              <p>123 Artisan Street<br>Craft City, CC 12345<br>United States</p>
+              <a href="#map-section" class="info-card__link">Get Directions <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="info-card">
+              <div class="info-card__icon">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <h3>Call Us</h3>
+              <p>Main: +1 234 567 890<br>Support: +1 234 567 891<br>Mon-Fri, 9am-6pm EST</p>
+              <a href="tel:+1234567890" class="info-card__link">Call Now <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="info-card">
+              <div class="info-card__icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <h3>Email Us</h3>
+              <p>General: hello@H&G.com<br>Support: support@H&G.com<br>Press: press@H&G.com</p>
+              <a href="mailto:hello@H&G.com" class="info-card__link">Send Email <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-form-section py-5">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-lg-6">
+            <div class="contact-form-wrapper">
+              <div class="section-header">
+                <span class="section-label">Send a Message</span>
+                <h2>Let's Start a Conversation</h2>
+                <p>Fill out the form below and we'll get back to you within 24 hours.</p>
+              </div>
+              <form class="contact-form">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="firstName">First Name *</label>
+                      <input type="text" id="firstName" class="form-control" placeholder="John" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="lastName">Last Name *</label>
+                      <input type="text" id="lastName" class="form-control" placeholder="Doe" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="email">Email Address *</label>
+                      <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label for="phone">Phone Number</label>
+                      <input type="tel" id="phone" class="form-control" placeholder="+1 234 567 890">
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="subject">Subject *</label>
+                      <select id="subject" class="form-select" required>
+                        <option value="" selected disabled>Select a topic</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="order">Order Status</option>
+                        <option value="product">Product Question</option>
+                        <option value="custom">Custom Order Request</option>
+                        <option value="wholesale">Wholesale Inquiry</option>
+                        <option value="collaboration">Collaboration</option>
+                        <option value="other">Other</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-group">
+                      <label for="message">Your Message *</label>
+                      <textarea id="message" class="form-control" rows="5" placeholder="Tell us how we can help you..." required></textarea>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input type="checkbox" class="form-check-input" id="newsletter">
+                      <label class="form-check-label" for="newsletter">Subscribe to our newsletter for crafting tips & exclusive offers</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <button type="submit" class="btn btn-primary btn-lg w-100">
+                      <i class="fas fa-paper-plane me-2"></i> Send Message
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="contact-sidebar">
+              <!-- FAQ Preview -->
+              <div class="faq-preview">
+                <h3><i class="fas fa-question-circle"></i> Frequently Asked Questions</h3>
+                <div class="faq-accordion">
+                  <div class="faq-item">
+                    <button class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq1">
+                      How long does shipping take?
+                      <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="faq1" class="collapse faq-answer">
+                      <p>Domestic orders typically arrive within 5-7 business days. International shipping takes 10-14 business days. All handmade items require 2-3 days for preparation.</p>
+                    </div>
+                  </div>
+                  <div class="faq-item">
+                    <button class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq2">
+                      Do you accept custom orders?
+                      <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="faq2" class="collapse faq-answer">
+                      <p>Yes! We love creating custom pieces. Select "Custom Order Request" in the form above and describe your vision. We'll get back to you with a quote within 48 hours.</p>
+                    </div>
+                  </div>
+                  <div class="faq-item">
+                    <button class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq3">
+                      What is your return policy?
+                      <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="faq3" class="collapse faq-answer">
+                      <p>We offer a 30-day return policy for unused items in original packaging. Custom orders are final sale. Please contact us if you have any issues with your order.</p>
+                    </div>
+                  </div>
+                  <div class="faq-item">
+                    <button class="faq-question" data-bs-toggle="collapse" data-bs-target="#faq4">
+                      Are your products eco-friendly?
+                      <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div id="faq4" class="collapse faq-answer">
+                      <p>Absolutely! We prioritize sustainable materials and eco-friendly packaging. All our products are made with natural, responsibly sourced materials.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Social Connect -->
+              <div class="social-connect">
+                <h3>Connect With Us</h3>
+                <p>Follow us on social media for behind-the-scenes content, new arrivals, and crafting inspiration.</p>
+                <div class="social-links">
+                  <a href="#" class="social-link social-link--facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Facebook</span>
+                  </a>
+                  <a href="#" class="social-link social-link--instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>Instagram</span>
+                  </a>
+                  <a href="#" class="social-link social-link--pinterest">
+                    <i class="fab fa-pinterest-p"></i>
+                    <span>Pinterest</span>
+                  </a>
+                  <a href="#" class="social-link social-link--youtube">
+                    <i class="fab fa-youtube"></i>
+                    <span>YouTube</span>
+                  </a>
+                </div>
+              </div>
+
+              <!-- Business Hours -->
+              <div class="business-hours">
+                <h3><i class="far fa-clock"></i> Business Hours</h3>
+                <ul class="hours-list">
+                  <li>
+                    <span class="day">Monday - Friday</span>
+                    <span class="time">9:00 AM - 6:00 PM</span>
+                  </li>
+                  <li>
+                    <span class="day">Saturday</span>
+                    <span class="time">10:00 AM - 4:00 PM</span>
+                  </li>
+                  <li>
+                    <span class="day">Sunday</span>
+                    <span class="time closed">Closed</span>
+                  </li>
+                </ul>
+                <p class="timezone"><i class="fas fa-globe"></i> All times are in Eastern Time (ET)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section" id="map-section">
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.30591910525!2d-74.25986548248684!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1635781234567!5m2!1sen!2s" 
+          width="100%" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+        <div class="map-overlay">
+          <div class="map-card">
+            <h4>H&G Artisan Studio</h4>
+            <p><i class="fas fa-map-marker-alt"></i> 123 Artisan Street, Craft City</p>
+            <a href="https://maps.google.com" target="_blank" class="btn btn-primary btn-sm">
+              <i class="fas fa-directions"></i> Get Directions
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="contact-cta">
+      <div class="container">
+        <div class="contact-cta__content">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h2>Become an Artisan Partner</h2>
+              <p>Are you a skilled craftsperson? Join our community of artisans and share your creations with the world.</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a href="#" class="btn btn-light btn-lg">Apply Now <i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__main">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="footer__about">
+              <a href="../../index.html" class="footer__logo">H&G</a>
+              <p>Discover unique handcrafted treasures made with love by skilled artisans from around the world.</p>
+              <div class="footer__social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <div class="footer__links">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../shop/index.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <div class="footer__links">
+              <h4>Customer Care</h4>
+              <ul>
+                <li><a href="#">My Account</a></li>
+                <li><a href="#">Track Order</a></li>
+                <li><a href="#">Shipping Info</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">FAQs</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="footer__contact">
+              <h4>Contact Us</h4>
+              <ul>
+                <li><i class="fas fa-map-marker-alt"></i> 123 Artisan Street, Craft City, CC 12345</li>
+                <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                <li><i class="fas fa-envelope"></i> hello@mioca.com</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p>&copy; 2025 H&G. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="footer__payment">
+              <i class="fab fa-cc-visa" style="font-size: 2rem; color: #fff;"></i>
+              <i class="fab fa-cc-mastercard" style="font-size: 2rem; color: #fff;"></i>
+              <i class="fab fa-cc-amex" style="font-size: 2rem; color: #fff;"></i>
+              <i class="fab fa-cc-paypal" style="font-size: 2rem; color: #fff;"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Auth Modal (Login/Register) -->
+  <div class="modal-backdrop" id="authBackdrop"></div>
+  <div class="auth-modal" id="authModal">
+      <button class="auth-modal__close" id="authModalClose">
+          <i class="fas fa-times"></i>
+      </button>
+      
+      <div class="auth-modal__header">
+          <h2>Welcome to H&G</h2>
+          <p>Sign in to access your account</p>
+      </div>
+
+      <div class="auth-modal__tabs">
+          <button class="auth-modal__tab active" data-tab="login">Login</button>
+          <button class="auth-modal__tab" data-tab="register">Register</button>
+      </div>
+
+      <div class="auth-modal__body">
+          <!-- Login Form -->
+          <div class="auth-modal__pane active" id="loginPane">
+              <form id="loginForm">
+                  <div class="auth-modal__input-group">
+                      <label for="loginEmail">Email Address</label>
+                      <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                  </div>
+
+                  <div class="auth-modal__input-group">
+                      <label for="loginPassword">Password</label>
+                      <div class="auth-modal__password-wrapper">
+                          <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                          <button type="button" class="password-toggle">
+                              <i class="fas fa-eye"></i>
+                          </button>
+                      </div>
+                  </div>
+
+                  <div class="auth-modal__checkbox">
+                      <input type="checkbox" id="rememberMe">
+                      <label for="rememberMe">Remember me</label>
+                  </div>
+
+                  <div class="auth-modal__forgot">
+                      <a href="#">Forgot password?</a>
+                  </div>
+
+                  <button type="submit" class="auth-modal__submit">
+                      <i class="fas fa-sign-in-alt"></i> Login
+                  </button>
+
+                  <div class="auth-modal__divider">
+                      <span>or continue with</span>
+                  </div>
+
+                  <div class="auth-modal__social">
+                      <button type="button" class="google">
+                          <i class="fab fa-google"></i> Google
+                      </button>
+                      <button type="button" class="facebook">
+                          <i class="fab fa-facebook-f"></i> Facebook
+                      </button>
+                  </div>
+
+                  <div class="auth-modal__switch">
+                      Don't have an account? <a href="#" data-switch-tab="register">Register</a>
+                  </div>
+              </form>
+          </div>
+
+          <!-- Register Form -->
+          <div class="auth-modal__pane" id="registerPane">
+              <form id="registerForm">
+                  <div class="auth-modal__input-group">
+                      <label for="registerName">Full Name</label>
+                      <input type="text" id="registerName" placeholder="Enter your full name" required>
+                  </div>
+
+                  <div class="auth-modal__input-group">
+                      <label for="registerEmail">Email Address</label>
+                      <input type="email" id="registerEmail" placeholder="Enter your email" required>
+                  </div>
+
+                  <div class="auth-modal__input-group">
+                      <label for="registerPassword">Password</label>
+                      <div class="auth-modal__password-wrapper">
+                          <input type="password" id="registerPassword" placeholder="Create a password" required>
+                          <button type="button" class="password-toggle">
+                              <i class="fas fa-eye"></i>
+                          </button>
+                      </div>
+                  </div>
+
+                  <div class="auth-modal__input-group">
+                      <label for="confirmPassword">Confirm Password</label>
+                      <div class="auth-modal__password-wrapper">
+                          <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                          <button type="button" class="password-toggle">
+                              <i class="fas fa-eye"></i>
+                          </button>
+                      </div>
+                  </div>
+
+                  <div class="auth-modal__checkbox">
+                      <input type="checkbox" id="agreeTerms" required>
+                      <label for="agreeTerms">I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
+                  </div>
+
+                  <button type="submit" class="auth-modal__submit">
+                      <i class="fas fa-user-plus"></i> Create Account
+                  </button>
+
+                  <div class="auth-modal__divider">
+                      <span>or continue with</span>
+                  </div>
+
+                  <div class="auth-modal__social">
+                      <button type="button" class="google">
+                          <i class="fab fa-google"></i> Google
+                      </button>
+                      <button type="button" class="facebook">
+                          <i class="fab fa-facebook-f"></i> Facebook
+                      </button>
+                  </div>
+
+                  <div class="auth-modal__switch">
+                      Already have an account? <a href="#" data-switch-tab="login">Login</a>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="../../assets/js/utils/storage.js"></script>
+  <script src="../../assets/js/utils/helpers.js"></script>
+  <script src="../../assets/js/components/navigation.js"></script>
+  <script src="../../assets/js/components/cart.js"></script>
+  <script src="../../assets/js/components/wishlist.js"></script>
+  <script src="../../assets/js/components/productGrid.js"></script>
+  <script src="../../assets/js/components/auth.js"></script>
+  <script src="../../assets/js/components/search.js"></script>
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>
