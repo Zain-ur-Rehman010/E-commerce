@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About H&G - Learn about our passion for handmade goods and the artisans behind our unique products.">
+    <title>About Us - H&G Handmade Goods</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+    <link rel="apple-touch-icon" href="../../assets/images/favicon.svg">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="about-page">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__container">
+                <!-- Logo -->
+                <a href="../../index.html" class="header__logo">
+                    H&G
+                </a>
+
+                <!-- Main Navigation (Desktop) -->
+                <nav class="header__nav">
+                    <a href="../../index.html" class="header__nav-link">Home</a>
+                    <a href="../shop/index.html" class="header__nav-link">Shop</a>
+                    <a href="about.html" class="header__nav-link active">About</a>
+                    <a href="blog.html" class="header__nav-link">Blog</a>
+                    <a href="contact.html" class="header__nav-link">Contact</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Search -->
+                    <button class="header__action-btn" id="searchBtn" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+
+                    <!-- Account -->
+                    <button class="header__action-btn" id="accountBtn" aria-label="My Account">
+                        <i class="fas fa-user"></i>
+                    </button>
+
+                    <!-- Wishlist -->
+                    <button class="header__action-btn" id="wishlistBtn" aria-label="Wishlist">
+                        <i class="fas fa-heart"></i>
+                        <span class="header__badge" id="wishlistCount">0</span>
+                    </button>
+
+                    <!-- Cart -->
+                    <button class="header__action-btn" id="cartBtn" aria-label="Shopping Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="header__badge" id="cartCount">0</span>
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button class="header__mobile-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__header">
+            <div class="header__logo">H&G</div>
+            <button class="mobile-menu__close" id="mobileMenuClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-menu__nav">
+            <a href="../../index.html" class="mobile-menu__nav-link">Home</a>
+            <a href="../shop/index.html" class="mobile-menu__nav-link">Shop</a>
+            <a href="about.html" class="mobile-menu__nav-link">About</a>
+            <a href="blog.html" class="mobile-menu__nav-link">Blog</a>
+            <a href="contact.html" class="mobile-menu__nav-link">Contact</a>
+        </nav>
+    </div>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+    <!-- Page Hero -->
+    <section class="page-hero" style="background-image: url('https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=1600');">
+        <div class="page-hero__overlay"></div>
+        <div class="container">
+            <div class="page-hero__content">
+                <nav class="page-hero__breadcrumb">
+                    <a href="../../index.html">Home</a>
+                    <span>/</span>
+                    <span>About Us</span>
+                </nav>
+                <h1>Our Story</h1>
+                <p>Crafting connections through handmade treasures</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Intro Section -->
+    <section class="section about-intro">
+        <div class="container">
+            <div class="about-intro__grid">
+                <div class="about-intro__content">
+                    <span class="section-tag">Who We Are</span>
+                    <h2>Bringing Artisan Craftsmanship to Your Home</h2>
+                    <p class="lead">At H&G, we believe that every handmade piece tells a story. Our mission is to connect talented artisans with people who appreciate the beauty of handcrafted goods.</p>
+                    <p>Founded in 2020, H&G started as a small passion project to support local artisans during challenging times. Today, we've grown into a thriving community of over 200 skilled craftspeople from across the country, each bringing their unique traditions and techniques to create one-of-a-kind pieces.</p>
+                    <p>Every item in our collection is carefully curated to ensure it meets our standards of quality, authenticity, and sustainability. When you shop with us, you're not just buying a product – you're supporting a dream, preserving a craft, and bringing a piece of art into your life.</p>
+                    <div class="about-intro__signature">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=100" alt="Founder">
+                        <div>
+                            <strong>James Mitchell</strong>
+                            <span>Founder & CEO</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-intro__images">
+                    <div class="about-intro__image about-intro__image--main">
+                        <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=600" alt="Artisan at work">
+                    </div>
+                    <div class="about-intro__image about-intro__image--secondary">
+                        <img src="https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?w=400" alt="Handmade pottery">
+                    </div>
+                    <div class="about-intro__badge">
+                        <span class="number">5+</span>
+                        <span class="text">Years of Excellence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission & Values -->
+    <section class="section about-values bg-light">
+        <div class="container">
+            <div class="section-title text-center">
+                <span class="section-title__tag">Our Values</span>
+                <h2>What Drives Us Every Day</h2>
+                <p>The principles that guide everything we do</p>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-card__icon">
+                        <i class="fas fa-hand-holding-heart"></i>
+                    </div>
+                    <h3>Authenticity</h3>
+                    <p>Every piece is genuinely handcrafted by skilled artisans. We verify each maker's process to ensure you receive authentic handmade products.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-card__icon">
+                        <i class="fas fa-leaf"></i>
+                    </div>
+                    <h3>Sustainability</h3>
+                    <p>We prioritize eco-friendly materials and sustainable practices. Our artisans use responsibly sourced materials whenever possible.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-card__icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Community</h3>
+                    <p>We're building a community of makers and lovers of handmade goods. Every purchase supports an artisan's livelihood and their family.</p>
+                </div>
+
+                <div class="value-card">
+                    <div class="value-card__icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3>Quality</h3>
+                    <p>We never compromise on quality. Each item goes through careful inspection to ensure it meets our high standards before reaching you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section about-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-item__icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <span class="stat-item__number" data-count="200">200+</span>
+                    <span class="stat-item__label">Skilled Artisans</span>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item__icon">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <span class="stat-item__number" data-count="15000">15,000+</span>
+                    <span class="stat-item__label">Products Sold</span>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item__icon">
+                        <i class="fas fa-smile"></i>
+                    </div>
+                    <span class="stat-item__number" data-count="10000">10,000+</span>
+                    <span class="stat-item__label">Happy Customers</span>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-item__icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <span class="stat-item__number" data-count="50">50</span>
+                    <span class="stat-item__label">States Covered</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Meet the Team -->
+    <section class="section about-team">
+        <div class="container">
+            <div class="section-title text-center">
+                <span class="section-title__tag">Our Team</span>
+                <h2>Meet the People Behind H&G</h2>
+                <p>Passionate individuals dedicated to supporting artisan communities</p>
+            </div>
+
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-card__image">
+                        <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400" alt="James Mitchell">
+                        <div class="team-card__social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-card__info">
+                        <h4>James Mitchell</h4>
+                        <span>Founder & CEO</span>
+                        <p>Passionate about preserving traditional crafts and empowering artisan communities.</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-card__image">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400" alt="Sarah Williams">
+                        <div class="team-card__social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-card__info">
+                        <h4>Sarah Williams</h4>
+                        <span>Creative Director</span>
+                        <p>Curates our collection and works closely with artisans to showcase their best work.</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-card__image">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400" alt="David Chen">
+                        <div class="team-card__social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-card__info">
+                        <h4>David Chen</h4>
+                        <span>Artisan Relations</span>
+                        <p>Builds and maintains relationships with our growing community of artisans.</p>
+                    </div>
+                </div>
+
+                <div class="team-card">
+                    <div class="team-card__image">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400" alt="Emily Rodriguez">
+                        <div class="team-card__social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-card__info">
+                        <h4>Emily Rodriguez</h4>
+                        <span>Customer Experience</span>
+                        <p>Ensures every customer has a delightful experience shopping with us.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Artisans -->
+    <section class="section about-artisans bg-light">
+        <div class="container">
+            <div class="section-title text-center">
+                <span class="section-title__tag">Our Artisans</span>
+                <h2>Meet Some of Our Talented Makers</h2>
+                <p>The skilled hands behind every beautiful creation</p>
+            </div>
+
+            <div class="artisans-grid">
+                <div class="artisan-card">
+                    <div class="artisan-card__image">
+                        <img src="https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400" alt="Maria Santos">
+                    </div>
+                    <div class="artisan-card__content">
+                        <h4>Maria Santos</h4>
+                        <span class="artisan-card__craft">Ceramic Artist</span>
+                        <p>"Every piece I create carries a piece of my heritage. Pottery is not just my craft, it's my way of keeping traditions alive."</p>
+                        <div class="artisan-card__location">
+                            <i class="fas fa-map-marker-alt"></i> Santa Fe, New Mexico
+                        </div>
+                    </div>
+                </div>
+
+                <div class="artisan-card">
+                    <div class="artisan-card__image">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400" alt="Robert Kim">
+                    </div>
+                    <div class="artisan-card__content">
+                        <h4>Robert Kim</h4>
+                        <span class="artisan-card__craft">Jewelry Maker</span>
+                        <p>"I find inspiration in nature. Each piece of jewelry is designed to capture the beauty of the natural world."</p>
+                        <div class="artisan-card__location">
+                            <i class="fas fa-map-marker-alt"></i> Portland, Oregon
+                        </div>
+                    </div>
+                </div>
+
+                <div class="artisan-card">
+                    <div class="artisan-card__image">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400" alt="Lisa Thompson">
+                    </div>
+                    <div class="artisan-card__content">
+                        <h4>Lisa Thompson</h4>
+                        <span class="artisan-card__craft">Textile Artist</span>
+                        <p>"Weaving is meditation for me. Each thread represents a moment of mindfulness and intention."</p>
+                        <div class="artisan-card__location">
+                            <i class="fas fa-map-marker-alt"></i> Austin, Texas
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-5">
+                <a href="../shop/index.html" class="btn btn-primary btn-lg">Shop Artisan Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline / Journey -->
+    <section class="section about-timeline">
+        <div class="container">
+            <div class="section-title text-center">
+                <span class="section-title__tag">Our Journey</span>
+                <h2>The H&G Story</h2>
+                <p>How we grew from an idea to a thriving community</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline__item">
+                    <div class="timeline__marker"></div>
+                    <div class="timeline__content">
+                        <span class="timeline__year">2020</span>
+                        <h4>The Beginning</h4>
+                        <p>H&G was born during the pandemic as a way to help local artisans sell their products online. Started with just 10 artisans.</p>
+                    </div>
+                </div>
+
+                <div class="timeline__item">
+                    <div class="timeline__marker"></div>
+                    <div class="timeline__content">
+                        <span class="timeline__year">2021</span>
+                        <h4>Growing Community</h4>
+                        <p>Expanded to 50 artisans across 15 states. Launched our artisan verification program to ensure authenticity.</p>
+                    </div>
+                </div>
+
+                <div class="timeline__item">
+                    <div class="timeline__marker"></div>
+                    <div class="timeline__content">
+                        <span class="timeline__year">2022</span>
+                        <h4>National Recognition</h4>
+                        <p>Featured in major publications. Reached 5,000 happy customers and launched our sustainability initiative.</p>
+                    </div>
+                </div>
+
+                <div class="timeline__item">
+                    <div class="timeline__marker"></div>
+                    <div class="timeline__content">
+                        <span class="timeline__year">2023</span>
+                        <h4>Community Impact</h4>
+                        <p>Partnered with craft schools to support the next generation of artisans. Launched the H&G Foundation.</p>
+                    </div>
+                </div>
+
+                <div class="timeline__item">
+                    <div class="timeline__marker"></div>
+                    <div class="timeline__content">
+                        <span class="timeline__year">2024</span>
+                        <h4>Today & Beyond</h4>
+                        <p>Over 200 artisans, 10,000+ customers, and growing. Committed to making handmade accessible to everyone.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section about-cta">
+        <div class="container">
+            <div class="about-cta__content">
+                <h2>Join Our Artisan Community</h2>
+                <p>Are you a skilled craftsperson? We'd love to feature your work on H&G and help you reach customers who truly appreciate handmade goods.</p>
+                <div class="about-cta__buttons">
+                    <a href="contact.html" class="btn btn-primary btn-lg">Become an Artisan</a>
+                    <a href="../shop/index.html" class="btn btn-outline-light btn-lg">Shop Collection</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__container">
+                <!-- About Column -->
+                <div class="footer__column">
+                    <h4>About H&G</h4>
+                    <p>We are passionate about bringing you the finest handmade goods from talented artisans around the world.</p>
+                    <div class="footer__social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links Column -->
+                <div class="footer__column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../shop/index.html">Shop</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Service Column -->
+                <div class="footer__column">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Track Order</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Column -->
+                <div class="footer__column footer__newsletter">
+                    <h4>Stay Connected</h4>
+                    <p>Subscribe to get special offers and updates</p>
+                    <form class="form-group">
+                        <input type="email" placeholder="Your email" required>
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer__bottom">
+                <p>&copy; 2024 H&G Handmade Goods. All rights reserved.</p>
+                <div class="footer__payment">
+                    <i class="fab fa-cc-visa" style="font-size: 2rem; color: #fff;"></i>
+                    <i class="fab fa-cc-mastercard" style="font-size: 2rem; color: #fff;"></i>
+                    <i class="fab fa-cc-amex" style="font-size: 2rem; color: #fff;"></i>
+                    <i class="fab fa-cc-paypal" style="font-size: 2rem; color: #fff;"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Offcanvas -->
+    <div class="cart-offcanvas" id="cartOffcanvas">
+        <div class="cart-offcanvas__header">
+            <h3>Shopping Cart</h3>
+            <button class="cart-offcanvas__close" id="cartClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+
+        <div class="cart-offcanvas__body" id="cartBody">
+            <div class="cart-offcanvas__empty">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Your cart is empty</p>
+            </div>
+        </div>
+
+        <div class="cart-offcanvas__footer" id="cartFooter" style="display: none;">
+            <div class="cart-offcanvas__subtotal">
+                <span>Subtotal:</span>
+                <span class="amount" id="cartSubtotal">$0.00</span>
+            </div>
+            <a href="../cart/index.html" class="btn btn-outline-primary btn-block mb-2">View Cart</a>
+            <a href="../cart/checkout.html" class="btn btn-primary btn-block">Checkout</a>
+        </div>
+    </div>
+
+    <!-- Modal Backdrop -->
+    <div class="modal-backdrop" id="cartBackdrop"></div>
+
+    <!-- Auth Modal (Login/Register) -->
+    <div class="modal-backdrop" id="authBackdrop"></div>
+    <div class="auth-modal" id="authModal">
+        <button class="auth-modal__close" id="authModalClose">
+            <i class="fas fa-times"></i>
+        </button>
+        
+        <div class="auth-modal__header">
+            <h2>Welcome to H&G</h2>
+            <p>Sign in to access your account</p>
+        </div>
+
+        <div class="auth-modal__tabs">
+            <button class="auth-modal__tab active" data-tab="login">Login</button>
+            <button class="auth-modal__tab" data-tab="register">Register</button>
+        </div>
+
+        <div class="auth-modal__body">
+            <!-- Login Form -->
+            <div class="auth-modal__pane active" id="loginPane">
+                <form id="loginForm">
+                    <div class="auth-modal__input-group">
+                        <label for="loginEmail">Email Address</label>
+                        <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="auth-modal__input-group">
+                        <label for="loginPassword">Password</label>
+                        <div class="auth-modal__password-wrapper">
+                            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                            <button type="button" class="password-toggle">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="auth-modal__checkbox">
+                        <input type="checkbox" id="rememberMe">
+                        <label for="rememberMe">Remember me</label>
+                    </div>
+
+                    <div class="auth-modal__forgot">
+                        <a href="#">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="auth-modal__submit">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+
+                    <div class="auth-modal__divider">
+                        <span>or continue with</span>
+                    </div>
+
+                    <div class="auth-modal__social">
+                        <button type="button" class="google">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                        <button type="button" class="facebook">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </button>
+                    </div>
+
+                    <div class="auth-modal__switch">
+                        Don't have an account? <a href="#" data-switch-tab="register">Register</a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Register Form -->
+            <div class="auth-modal__pane" id="registerPane">
+                <form id="registerForm">
+                    <div class="auth-modal__input-group">
+                        <label for="registerName">Full Name</label>
+                        <input type="text" id="registerName" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="auth-modal__input-group">
+                        <label for="registerEmail">Email Address</label>
+                        <input type="email" id="registerEmail" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="auth-modal__input-group">
+                        <label for="registerPassword">Password</label>
+                        <div class="auth-modal__password-wrapper">
+                            <input type="password" id="registerPassword" placeholder="Create a password" required>
+                            <button type="button" class="password-toggle">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="auth-modal__input-group">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <div class="auth-modal__password-wrapper">
+                            <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                            <button type="button" class="password-toggle">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="auth-modal__checkbox">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <label for="agreeTerms">I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
+                    </div>
+
+                    <button type="submit" class="auth-modal__submit">
+                        <i class="fas fa-user-plus"></i> Create Account
+                    </button>
+
+                    <div class="auth-modal__divider">
+                        <span>or continue with</span>
+                    </div>
+
+                    <div class="auth-modal__social">
+                        <button type="button" class="google">
+                            <i class="fab fa-google"></i> Google
+                        </button>
+                        <button type="button" class="facebook">
+                            <i class="fab fa-facebook-f"></i> Facebook
+                        </button>
+                    </div>
+
+                    <div class="auth-modal__switch">
+                        Already have an account? <a href="#" data-switch-tab="login">Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="../../assets/js/utils/storage.js"></script>
+    <script src="../../assets/js/utils/helpers.js"></script>
+    <script src="../../assets/js/components/navigation.js"></script>
+    <script src="../../assets/js/components/cart.js"></script>
+    <script src="../../assets/js/components/wishlist.js"></script>
+    <script src="../../assets/js/components/productGrid.js"></script>
+    <script src="../../assets/js/components/auth.js"></script>
+    <script src="../../assets/js/components/search.js"></script>
+    <script src="../../assets/js/main.js"></script>
+</body>
+</html>
