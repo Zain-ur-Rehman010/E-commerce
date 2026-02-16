@@ -5,10 +5,13 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-   
+    
+    # Shop app ka rasta
     path('', include('shop.urls', namespace='shop')),
-    #path('cart/', include('cart.urls', namespace='cart')),
-    #path('orders/', include('orders.urls', namespace='orders')),
+    
+    # Cart aur Orders ke raste badal kar 'shop.cart' aur 'shop.orders' karein
+    path('cart/', include('shop.cart.urls', namespace='cart')),
+    path('orders/', include('shop.orders.urls', namespace='orders')),
 ]
 
 if settings.DEBUG:
