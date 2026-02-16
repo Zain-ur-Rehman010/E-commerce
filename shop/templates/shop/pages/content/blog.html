@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog - H&G Handmade Store</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
+  <link rel="apple-touch-icon" href="../../assets/images/favicon.svg">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../../assets/css/styles.css">
+</head>
+<body class="blog-page">
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__container">
+                <!-- Logo -->
+                <a href="../../index.html" class="header__logo">
+                    H&G
+                </a>
+
+                <!-- Main Navigation (Desktop) -->
+                <nav class="header__nav">
+                    <a href="../../index.html" class="header__nav-link">Home</a>
+                    <a href="../shop/index.html" class="header__nav-link">Shop</a>
+                    <a href="about.html" class="header__nav-link">About</a>
+                    <a href="blog.html" class="header__nav-link active">Blog</a>
+                    <a href="contact.html" class="header__nav-link">Contact</a>
+                </nav>
+
+                <!-- Header Actions -->
+                <div class="header__actions">
+                    <!-- Search -->
+                    <button class="header__action-btn" id="searchBtn" aria-label="Search">
+                        <i class="fas fa-search"></i>
+                    </button>
+
+                    <!-- Account -->
+                    <button class="header__action-btn" id="accountBtn" aria-label="My Account">
+                        <i class="fas fa-user"></i>
+                    </button>
+
+                    <!-- Wishlist -->
+                    <button class="header__action-btn" id="wishlistBtn" aria-label="Wishlist">
+                        <i class="fas fa-heart"></i>
+                        <span class="header__badge" id="wishlistCount">0</span>
+                    </button>
+
+                    <!-- Cart -->
+                    <button class="header__action-btn" id="cartBtn" aria-label="Shopping Cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="header__badge" id="cartCount">0</span>
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button class="header__mobile-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__header">
+            <div class="header__logo">H&G</div>
+            <button class="mobile-menu__close" id="mobileMenuClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-menu__nav">
+            <a href="../../index.html" class="mobile-menu__nav-link">Home</a>
+            <a href="../shop/index.html" class="mobile-menu__nav-link">Shop</a>
+            <a href="about.html" class="mobile-menu__nav-link">About</a>
+            <a href="blog.html" class="mobile-menu__nav-link">Blog</a>
+            <a href="contact.html" class="mobile-menu__nav-link">Contact</a>
+        </nav>
+    </div>
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="blog-hero">
+      <div class="container">
+        <div class="blog-hero__content">
+          <span class="blog-hero__label">Our Blog</span>
+          <h1>Craft Stories & Inspiration</h1>
+          <p>Discover the art of handmade living. Tips, tutorials, artisan stories, and creative inspiration for your home.</p>
+        </div>
+      </div>
+      <div class="blog-hero__shapes">
+        <div class="shape shape--1"></div>
+        <div class="shape shape--2"></div>
+        <div class="shape shape--3"></div>
+      </div>
+    </section>
+
+    <!-- Featured Post -->
+    <section class="blog-featured py-5">
+      <div class="container">
+        <div class="featured-post">
+          <div class="row g-0 align-items-center">
+            <div class="col-lg-7">
+              <div class="featured-post__image">
+                <img src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=800" alt="Featured Post">
+                <span class="featured-post__badge">Featured</span>
+              </div>
+            </div>
+            <div class="col-lg-5">
+              <div class="featured-post__content">
+                <div class="featured-post__meta">
+                  <span class="category">Crafting Tips</span>
+                  <span class="date"><i class="far fa-calendar-alt"></i> Dec 20, 2025</span>
+                </div>
+                <h2>The Art of Handmade: Why Artisan Products Matter More Than Ever</h2>
+                <p>In a world of mass production, discover why choosing handmade items creates meaningful connections and supports sustainable living. Learn how each piece tells a unique story.</p>
+                <div class="featured-post__author">
+                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Author">
+                  <div class="author-info">
+                    <span class="name">Sarah Mitchell</span>
+                    <span class="role">Creative Director</span>
+                  </div>
+                </div>
+                <a href="#" class="btn btn-primary">Read Article <i class="fas fa-arrow-right ms-2"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Categories Filter -->
+    <section class="blog-categories">
+      <div class="container">
+        <div class="categories-filter">
+          <button class="filter-btn active" data-filter="all">All Posts</button>
+          <button class="filter-btn" data-filter="crafting">Crafting Tips</button>
+          <button class="filter-btn" data-filter="stories">Artisan Stories</button>
+          <button class="filter-btn" data-filter="diy">DIY Projects</button>
+          <button class="filter-btn" data-filter="trends">Trends</button>
+          <button class="filter-btn" data-filter="sustainability">Sustainability</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog Grid -->
+    <section class="blog-grid py-5">
+      <div class="container">
+        <div class="row">
+          <!-- Main Content -->
+          <div class="col-lg-8">
+            <div class="row g-4">
+              <!-- Blog Post 1 -->
+              <div class="col-md-6">
+                <article class="blog-card">
+                  <div class="blog-card__image">
+                    <a href="#">
+                      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600" alt="Blog Post">
+                    </a>
+                    <span class="blog-card__category">DIY Projects</span>
+                    <button class="blog-card__bookmark"><i class="far fa-bookmark"></i></button>
+                  </div>
+                  <div class="blog-card__content">
+                    <div class="blog-card__meta">
+                      <span><i class="far fa-calendar-alt"></i> Dec 18, 2025</span>
+                      <span><i class="far fa-clock"></i> 5 min read</span>
+                    </div>
+                    <h3><a href="#">10 Easy Macramé Projects for Beginners</a></h3>
+                    <p>Start your macramé journey with these simple yet stunning projects perfect for crafting newbies.</p>
+                    <div class="blog-card__footer">
+                      <div class="author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100" alt="Author">
+                        <span>Emma Wilson</span>
+                      </div>
+                      <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Blog Post 2 -->
+              <div class="col-md-6">
+                <article class="blog-card">
+                  <div class="blog-card__image">
+                    <a href="#">
+                      <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600" alt="Blog Post">
+                    </a>
+                    <span class="blog-card__category">Artisan Stories</span>
+                    <button class="blog-card__bookmark"><i class="far fa-bookmark"></i></button>
+                  </div>
+                  <div class="blog-card__content">
+                    <div class="blog-card__meta">
+                      <span><i class="far fa-calendar-alt"></i> Dec 15, 2025</span>
+                      <span><i class="far fa-clock"></i> 8 min read</span>
+                    </div>
+                    <h3><a href="#">Meet Maria: The Potter Behind Our Ceramic Collection</a></h3>
+                    <p>Discover the inspiring story of Maria Santos, whose hands shape the beautiful ceramics you love.</p>
+                    <div class="blog-card__footer">
+                      <div class="author">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100" alt="Author">
+                        <span>James Chen</span>
+                      </div>
+                      <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Blog Post 3 -->
+              <div class="col-md-6">
+                <article class="blog-card">
+                  <div class="blog-card__image">
+                    <a href="#">
+                      <img src="https://images.unsplash.com/photo-1544457070-4cd773b4d71e?w=600" alt="Blog Post">
+                    </a>
+                    <span class="blog-card__category">Sustainability</span>
+                    <button class="blog-card__bookmark"><i class="far fa-bookmark"></i></button>
+                  </div>
+                  <div class="blog-card__content">
+                    <div class="blog-card__meta">
+                      <span><i class="far fa-calendar-alt"></i> Dec 12, 2025</span>
+                      <span><i class="far fa-clock"></i> 6 min read</span>
+                    </div>
+                    <h3><a href="#">Sustainable Crafting: Eco-Friendly Materials Guide</a></h3>
+                    <p>Learn about environmentally conscious materials that don't compromise on quality or beauty.</p>
+                    <div class="blog-card__footer">
+                      <div class="author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Author">
+                        <span>Sarah Mitchell</span>
+                      </div>
+                      <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Blog Post 4 -->
+              <div class="col-md-6">
+                <article class="blog-card">
+                  <div class="blog-card__image">
+                    <a href="#">
+                      <img src="https://images.unsplash.com/photo-1606722590583-6951b5ea92ad?w=600" alt="Blog Post">
+                    </a>
+                    <span class="blog-card__category">Trends</span>
+                    <button class="blog-card__bookmark"><i class="far fa-bookmark"></i></button>
+                  </div>
+                  <div class="blog-card__content">
+                    <div class="blog-card__meta">
+                      <span><i class="far fa-calendar-alt"></i> Dec 10, 2025</span>
+                      <span><i class="far fa-clock"></i> 4 min read</span>
+                    </div>
+                    <h3><a href="#">2025 Home Decor Trends: Handmade Takes Center Stage</a></h3>
+                    <p>Explore the biggest interior design trends embracing artisanal and handcrafted elements.</p>
+                    <div class="blog-card__footer">
+                      <div class="author">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100" alt="Author">
+                        <span>Michael Park</span>
+                      </div>
+                      <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Blog Post 5 -->
+              <div class="col-md-6">
+                <article class="blog-card">
+                  <div class="blog-card__image">
+                    <a href="#">
+                      <img src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?w=600" alt="Blog Post">
+                    </a>
+                    <span class="blog-card__category">Crafting Tips</span>
+                    <button class="blog-card__bookmark"><i class="far fa-bookmark"></i></button>
+                  </div>
+                  <div class="blog-card__content">
+                    <div class="blog-card__meta">
+                      <span><i class="far fa-calendar-alt"></i> Dec 8, 2025</span>
+                      <span><i class="far fa-clock"></i> 7 min read</span>
+                    </div>
+                    <h3><a href="#">The Complete Guide to Natural Fabric Dyeing</a></h3>
+                    <p>Master the ancient art of creating beautiful, vibrant colors using plants and natural ingredients.</p>
+                    <div class="blog-card__footer">
+                      <div class="author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100" alt="Author">
+                        <span>Emma Wilson</span>
+                      </div>
+                      <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+              <!-- Blog Post 6 -->
+              <div class="col-md-6">
+                <article class="blog-card">
+                  <div class="blog-card__image">
+                    <a href="#">
+                      <img src="https://images.unsplash.com/photo-1513519245088-0e12902e35a6?w=600" alt="Blog Post">
+                    </a>
+                    <span class="blog-card__category">Artisan Stories</span>
+                    <button class="blog-card__bookmark"><i class="far fa-bookmark"></i></button>
+                  </div>
+                  <div class="blog-card__content">
+                    <div class="blog-card__meta">
+                      <span><i class="far fa-calendar-alt"></i> Dec 5, 2025</span>
+                      <span><i class="far fa-clock"></i> 6 min read</span>
+                    </div>
+                    <h3><a href="#">From Hobby to Business: Starting Your Craft Journey</a></h3>
+                    <p>Real stories from artisans who turned their passion into thriving handmade businesses.</p>
+                    <div class="blog-card__footer">
+                      <div class="author">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100" alt="Author">
+                        <span>James Chen</span>
+                      </div>
+                      <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <!-- Pagination -->
+            <nav class="blog-pagination">
+              <ul class="pagination">
+                <li class="page-item disabled">
+                  <a class="page-link" href="#"><i class="fas fa-chevron-left"></i></a>
+                </li>
+                <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                  <a class="page-link" href="#"><i class="fas fa-chevron-right"></i></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <!-- Sidebar -->
+          <div class="col-lg-4">
+            <aside class="blog-sidebar">
+              <!-- Search Widget -->
+              <div class="sidebar-widget search-widget">
+                <div class="search-form">
+                  <input type="text" placeholder="Search articles...">
+                  <button type="submit"><i class="fas fa-search"></i></button>
+                </div>
+              </div>
+
+              <!-- About Widget -->
+              <div class="sidebar-widget about-widget">
+                <div class="about-widget__content">
+                  <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400" alt="About Blog">
+                  <h4>Welcome to Our Blog</h4>
+                  <p>Your destination for handmade inspiration, crafting tutorials, and stories from artisans around the world.</p>
+                  <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Categories Widget -->
+              <div class="sidebar-widget categories-widget">
+                <h4 class="widget-title">Categories</h4>
+                <ul class="categories-list">
+                  <li>
+                    <a href="#">
+                      <span class="category-name"><i class="fas fa-palette"></i> Crafting Tips</span>
+                      <span class="count">24</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="category-name"><i class="fas fa-user-circle"></i> Artisan Stories</span>
+                      <span class="count">18</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="category-name"><i class="fas fa-tools"></i> DIY Projects</span>
+                      <span class="count">32</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="category-name"><i class="fas fa-fire"></i> Trends</span>
+                      <span class="count">15</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <span class="category-name"><i class="fas fa-leaf"></i> Sustainability</span>
+                      <span class="count">21</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Popular Posts Widget -->
+              <div class="sidebar-widget popular-widget">
+                <h4 class="widget-title">Popular Posts</h4>
+                <div class="popular-posts">
+                  <article class="popular-post">
+                    <a href="#" class="popular-post__image">
+                      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200" alt="Post">
+                    </a>
+                    <div class="popular-post__content">
+                      <h5><a href="#">10 Easy Macramé Projects for Beginners</a></h5>
+                      <span class="date"><i class="far fa-calendar-alt"></i> Dec 18, 2025</span>
+                    </div>
+                  </article>
+                  <article class="popular-post">
+                    <a href="#" class="popular-post__image">
+                      <img src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=200" alt="Post">
+                    </a>
+                    <div class="popular-post__content">
+                      <h5><a href="#">Why Artisan Products Matter More Than Ever</a></h5>
+                      <span class="date"><i class="far fa-calendar-alt"></i> Dec 20, 2025</span>
+                    </div>
+                  </article>
+                  <article class="popular-post">
+                    <a href="#" class="popular-post__image">
+                      <img src="https://images.unsplash.com/photo-1490312278390-ab64016e0aa9?w=200" alt="Post">
+                    </a>
+                    <div class="popular-post__content">
+                      <h5><a href="#">The Complete Guide to Natural Fabric Dyeing</a></h5>
+                      <span class="date"><i class="far fa-calendar-alt"></i> Dec 8, 2025</span>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <!-- Tags Widget -->
+              <div class="sidebar-widget tags-widget">
+                <h4 class="widget-title">Popular Tags</h4>
+                <div class="tags-cloud">
+                  <a href="#" class="tag">Handmade</a>
+                  <a href="#" class="tag">Ceramics</a>
+                  <a href="#" class="tag">Macramé</a>
+                  <a href="#" class="tag">Woodwork</a>
+                  <a href="#" class="tag">Textiles</a>
+                  <a href="#" class="tag">Eco-Friendly</a>
+                  <a href="#" class="tag">Home Decor</a>
+                  <a href="#" class="tag">DIY</a>
+                  <a href="#" class="tag">Artisan</a>
+                  <a href="#" class="tag">Vintage</a>
+                </div>
+              </div>
+
+              <!-- Newsletter Widget -->
+              <div class="sidebar-widget newsletter-widget">
+                <div class="newsletter-widget__content">
+                  <i class="fas fa-envelope-open-text"></i>
+                  <h4>Subscribe to Newsletter</h4>
+                  <p>Get weekly crafting tips and exclusive content delivered to your inbox.</p>
+                  <form class="newsletter-form">
+                    <input type="email" placeholder="Your email address">
+                    <button type="submit">Subscribe</button>
+                  </form>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Blog CTA -->
+    <section class="blog-cta">
+      <div class="container">
+        <div class="blog-cta__content">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h2>Want to Share Your Story?</h2>
+              <p>Are you an artisan with a unique craft story? We'd love to feature you on our blog!</p>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a href="#" class="btn btn-light btn-lg">Get in Touch <i class="fas fa-arrow-right ms-2"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer__main">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4 col-md-6">
+            <div class="footer__about">
+              <a href="../../index.html" class="footer__logo">H&G</a>
+              <p>Discover unique handcrafted treasures made with love by skilled artisans from around the world.</p>
+              <div class="footer__social">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <div class="footer__links">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../shop/index.html">Shop</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-6">
+            <div class="footer__links">
+              <h4>Customer Care</h4>
+              <ul>
+                <li><a href="#">My Account</a></li>
+                <li><a href="#">Track Order</a></li>
+                <li><a href="#">Shipping Info</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">FAQs</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6">
+            <div class="footer__contact">
+              <h4>Contact Us</h4>
+              <ul>
+                <li><i class="fas fa-map-marker-alt"></i> 123 Artisan Street, Craft City, CC 12345</li>
+                <li><i class="fas fa-phone"></i> +1 234 567 890</li>
+                <li><i class="fas fa-envelope"></i> hello@mioca.com</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-6">
+            <p>&copy; 2025 H&G. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <div class="footer__payment">
+              <i class="fab fa-cc-visa" style="font-size: 2rem; color: #fff;"></i>
+              <i class="fab fa-cc-mastercard" style="font-size: 2rem; color: #fff;"></i>
+              <i class="fab fa-cc-amex" style="font-size: 2rem; color: #fff;"></i>
+              <i class="fab fa-cc-paypal" style="font-size: 2rem; color: #fff;"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Auth Modal (Login/Register) -->
+  <div class="modal-backdrop" id="authBackdrop"></div>
+  <div class="auth-modal" id="authModal">
+      <button class="auth-modal__close" id="authModalClose">
+          <i class="fas fa-times"></i>
+      </button>
+      
+      <div class="auth-modal__header">
+          <h2>Welcome to H&G</h2>
+          <p>Sign in to access your account</p>
+      </div>
+
+      <div class="auth-modal__tabs">
+          <button class="auth-modal__tab active" data-tab="login">Login</button>
+          <button class="auth-modal__tab" data-tab="register">Register</button>
+      </div>
+
+      <div class="auth-modal__body">
+          <!-- Login Form -->
+          <div class="auth-modal__pane active" id="loginPane">
+              <form id="loginForm">
+                  <div class="auth-modal__input-group">
+                      <label for="loginEmail">Email Address</label>
+                      <input type="email" id="loginEmail" placeholder="Enter your email" required>
+                  </div>
+
+                  <div class="auth-modal__input-group">
+                      <label for="loginPassword">Password</label>
+                      <div class="auth-modal__password-wrapper">
+                          <input type="password" id="loginPassword" placeholder="Enter your password" required>
+                          <button type="button" class="password-toggle">
+                              <i class="fas fa-eye"></i>
+                          </button>
+                      </div>
+                  </div>
+
+                  <div class="auth-modal__checkbox">
+                      <input type="checkbox" id="rememberMe">
+                      <label for="rememberMe">Remember me</label>
+                  </div>
+
+                  <div class="auth-modal__forgot">
+                      <a href="#">Forgot password?</a>
+                  </div>
+
+                  <button type="submit" class="auth-modal__submit">
+                      <i class="fas fa-sign-in-alt"></i> Login
+                  </button>
+
+                  <div class="auth-modal__divider">
+                      <span>or continue with</span>
+                  </div>
+
+                  <div class="auth-modal__social">
+                      <button type="button" class="google">
+                          <i class="fab fa-google"></i> Google
+                      </button>
+                      <button type="button" class="facebook">
+                          <i class="fab fa-facebook-f"></i> Facebook
+                      </button>
+                  </div>
+
+                  <div class="auth-modal__switch">
+                      Don't have an account? <a href="#" data-switch-tab="register">Register</a>
+                  </div>
+              </form>
+          </div>
+
+          <!-- Register Form -->
+          <div class="auth-modal__pane" id="registerPane">
+              <form id="registerForm">
+                  <div class="auth-modal__input-group">
+                      <label for="registerName">Full Name</label>
+                      <input type="text" id="registerName" placeholder="Enter your full name" required>
+                  </div>
+
+                  <div class="auth-modal__input-group">
+                      <label for="registerEmail">Email Address</label>
+                      <input type="email" id="registerEmail" placeholder="Enter your email" required>
+                  </div>
+
+                  <div class="auth-modal__input-group">
+                      <label for="registerPassword">Password</label>
+                      <div class="auth-modal__password-wrapper">
+                          <input type="password" id="registerPassword" placeholder="Create a password" required>
+                          <button type="button" class="password-toggle">
+                              <i class="fas fa-eye"></i>
+                          </button>
+                      </div>
+                  </div>
+
+                  <div class="auth-modal__input-group">
+                      <label for="confirmPassword">Confirm Password</label>
+                      <div class="auth-modal__password-wrapper">
+                          <input type="password" id="confirmPassword" placeholder="Confirm your password" required>
+                          <button type="button" class="password-toggle">
+                              <i class="fas fa-eye"></i>
+                          </button>
+                      </div>
+                  </div>
+
+                  <div class="auth-modal__checkbox">
+                      <input type="checkbox" id="agreeTerms" required>
+                      <label for="agreeTerms">I agree to the <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
+                  </div>
+
+                  <button type="submit" class="auth-modal__submit">
+                      <i class="fas fa-user-plus"></i> Create Account
+                  </button>
+
+                  <div class="auth-modal__divider">
+                      <span>or continue with</span>
+                  </div>
+
+                  <div class="auth-modal__social">
+                      <button type="button" class="google">
+                          <i class="fab fa-google"></i> Google
+                      </button>
+                      <button type="button" class="facebook">
+                          <i class="fab fa-facebook-f"></i> Facebook
+                      </button>
+                  </div>
+
+                  <div class="auth-modal__switch">
+                      Already have an account? <a href="#" data-switch-tab="login">Login</a>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="../../assets/js/utils/storage.js"></script>
+  <script src="../../assets/js/utils/helpers.js"></script>
+  <script src="../../assets/js/components/navigation.js"></script>
+  <script src="../../assets/js/components/cart.js"></script>
+  <script src="../../assets/js/components/wishlist.js"></script>
+  <script src="../../assets/js/components/productGrid.js"></script>
+  <script src="../../assets/js/components/auth.js"></script>
+  <script src="../../assets/js/components/search.js"></script>
+  <script src="../../assets/js/main.js"></script>
+</body>
+</html>
