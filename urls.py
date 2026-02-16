@@ -5,10 +5,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # Shop app ko yahan namespace ke sath connect karein
+   
     path('', include('shop.urls', namespace='shop')),
-    path('cart/', include('cart.urls', namespace='cart')),
-    path('orders/', include('orders.urls', namespace='orders')),
+    #path('cart/', include('cart.urls', namespace='cart')),
+    #path('orders/', include('orders.urls', namespace='orders')),
 ]
 
 if settings.DEBUG:
