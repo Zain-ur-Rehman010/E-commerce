@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from .models import Category, Product
-# Cart form agar file mojood nahi to ye line error de sakti hai, 
-# lekin filhaal hum ise rehne dete hain
+
+# Cart form handler
 try:
     from .cart.forms import CartAddProductForm
 except ImportError:
@@ -14,9 +14,12 @@ def product_list(request, category_slug=None):
     if category_slug:
         category = get_object_or_404(Category, slug=category_slug)
         products = products.filter(category=category)
-    return render(request, 'shop/product/index.html', {'category': category, 'categories': categories, 'products': products})
+    return render(request, 'shop/product/index.html', {
+        'category': category, 
+        'categories': categories, 
+        'products': products
+    })
 
-# Product Detail - Sirf aik baar rakhein aur sahi template path use karein
 def product_detail(request, id, slug):
     product = get_object_or_404(Product, id=id, slug=slug, available=True)
     context = {'product': product}
@@ -30,6 +33,6 @@ def about(request):
 def contact(request):
     return render(request, 'shop/pages/content/contact.html')
 
-# ISKA NAAM 'blog_html' RAKHEIN KYUNKE URLS.PY MEIN YAHI HAI
-def blog_html(request):
+# Function ka naam 'blog' rakha hai takay urls.py se match kare
+def blog(request):
     return render(request, 'shop/pages/content/blog.html')
