@@ -10,12 +10,13 @@ urlpatterns = [
     # Static Content Pages
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
+    # Yahan 'blog' rakhein kyunke views mein hum 'blog' function banayenge
     path('blog/', views.blog, name='blog'),
     
     # Product Detail
     path('<int:id>/<slug:slug>/', views.product_detail, name='product_detail'),
     
-    # Placeholder for Cart/Checkout (Abhi ke liye error rokne ke liye)
+    # Placeholders takay crash na ho
     path('cart/', views.product_list, name='cart'), 
     path('checkout/', views.product_list, name='checkout'),
 ]
