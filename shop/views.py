@@ -23,6 +23,9 @@ def blog_detail(request):
 
 def contact(request):
     return render(request, 'shop/pages/content/contact.html')
+
 def product_detail(request, id, slug):
+
     product = get_object_or_404(Product, id=id, slug=slug, available=True)
-    return render(request, 'shop/product/detail.html', {'product': product})
+
+    return render(request, 'shop/pages/shop/product.html', {'product': product})
