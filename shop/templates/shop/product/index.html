@@ -432,7 +432,7 @@
                 <div class="footer__column">
                     <h4>Quick Links</h4>
                     <ul>
-                        <li><a href="{% url 'shop' %}">
+                        <li><a href="{% url 'shop:product_list' %}">
 Shop</a></li>
                         <li><a href="pages/content/about.html">About Us</a></li>
                         <li><a href="{% url 'blog' %}">
@@ -500,9 +500,9 @@ Contact</a></li>
                 <span>Subtotal:</span>
                 <span class="amount" id="cartSubtotal">$0.00</span>
             </div>
-            <a href="{% url 'cart' %}">
+            <a href="{% url 'shop:cart' %}">
  class="btn btn-outline-primary btn-block mb-2">View Cart</a>
-            <a href="{% url 'checkout' %}">
+            <a href="{% url 'shop:checkout' %}">
  class="btn btn-primary btn-block">Checkout</a>
         </div>
     </div>
