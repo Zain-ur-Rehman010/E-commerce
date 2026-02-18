@@ -183,7 +183,7 @@
             <div class="product-grid" id="shopProductGrid">
                 {% for product in products %}
                 <div class="product-card">
-                    a href="{% url 'shop:product_detail' product.id product.slug %}">
+                    a href="{% url 'shop:product_detail' id=product.id slug=product.slug %}">
                     {% if product.image %}
                     <img src="{{ product.image.url }}" alt="{{ product.name }}">
                     {% else %}
