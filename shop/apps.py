@@ -1,7 +1,6 @@
 from django.apps import AppConfig
 from django.db.models.signals import post_migrate
 
-# Yeh function admin account banaye ga
 def create_superuser(sender, **kwargs):
     from django.contrib.auth import get_user_model
     User = get_user_model()
@@ -14,5 +13,5 @@ class ShopConfig(AppConfig):
     name = 'shop'
 
     def ready(self):
-        # post_migrate ka matlab hai ke jaise hi table banenge, admin ban jaye ga
+        
         post_migrate.connect(create_superuser, sender=self)
