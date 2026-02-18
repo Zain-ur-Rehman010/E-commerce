@@ -180,24 +180,23 @@
                 <button class="category-tabs__btn" data-category="accessories">Accessories</button>
             </div>
 
-            <div class="product-grid" id="productGrid">
+            <div class="product-grid" id="shopProductGrid">
                 {% for product in products %}
-                    <div class="product-item">
-                        <a href="{{ product.get_absolute_url }}">
-                            {% if product.image %}
-                                <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                            {% else %}
-                                <img src="https://via.placeholder.com/250x200?text=No+Image" alt="No Image">
-                            {% endif %}
-                            <h3>{{ product.name }}</h3>
-                        </a>
-                        <p class="price">${{ product.price }}</p>
-                    </div>
-                {% empty %}
-                    <p class="text-center w-100"></p>
-                {% endfor %}
-            </div>
-
+                <div class="product-card">
+                    a href="{% url 'shop:product_detail' product.id product.slug %}">
+                    {% if product.image %}
+                    <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                    {% else %}
+                    <img src="{% static 'shop/assets/images/no-image.jpg' %}" alt="No Image">
+                    {% endif %}
+                </a>
+        <h3>{{ product.name }}</h3>
+        <p>${{ product.price }}</p>
+    </div>
+    {% empty %}
+   
+    {% endfor %}
+</div>
             <div class="text-center mt-5">
                 <a href="#" class="btn btn-outline-primary btn-lg">View All Products</a>
             </div>
