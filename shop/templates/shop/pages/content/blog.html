@@ -63,6 +63,22 @@
         </div>
     </header>
 
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu__header">
+            <div class="header__logo">H&G</div>
+            <button class="mobile-menu__close" id="mobileMenuClose">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <nav class="mobile-menu__nav">
+            <a href="{% url 'shop:home' %}" class="mobile-menu__nav-link">Home</a>
+            <a href="{% url 'shop:product_list' %}" class="mobile-menu__nav-link">Shop</a>
+            <a href="{% url 'shop:about' %}" class="mobile-menu__nav-link">About</a>
+            <a href="{% url 'shop:blog' %}" class="mobile-menu__nav-link">Blog</a>
+            <a href="{% url 'shop:contact' %}" class="mobile-menu__nav-link">Contact</a>
+</nav>
+</div>
+
 
 <!-- ================= HERO SECTION ================= -->
 <main>
