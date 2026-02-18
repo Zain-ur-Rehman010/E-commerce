@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +8,8 @@
     <title>Shop - H&G Handmade Goods</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
-    <link rel="apple-touch-icon" href="../../assets/images/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.svg' %}">
+    <link rel="apple-touch-icon" href="{% static 'images/favicon.svg' %}">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,62 +18,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body class="shop-page">
 
-    <!-- Header (Same as index.html) -->
-    <header class="header">
-        <div class="container">
-            <div class="header__container">
-                <a href="../../index.html" class="header__logo">H&G</a>
-
-                <nav class="header__nav">
-                    <a href="../../index.html" class="header__nav-link">Home</a>
-                    <a href="index.html" class="header__nav-link active">Shop</a>
-                    <a href="../content/about.html" class="header__nav-link">About</a>
-                    <a href="../content/blog.html" class="header__nav-link">Blog</a>
-                    <a href="../content/contact.html" class="header__nav-link">Contact</a>
-                </nav>
-
-                <div class="header__actions">
-                    <button class="header__action-btn" id="searchBtn"><i class="fas fa-search"></i></button>
-                    <button class="header__action-btn" id="accountBtn"><i class="fas fa-user"></i></button>
-                    <button class="header__action-btn" id="wishlistBtn">
-                        <i class="fas fa-heart"></i>
-                        <span class="header__badge" id="wishlistCount">0</span>
-                    </button>
-                    <button class="header__action-btn" id="cartBtn">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="header__badge" id="cartCount">0</span>
-                    </button>
-                    <button class="header__mobile-toggle" id="mobileMenuToggle"><i class="fas fa-bars"></i></button>
-                </div>
-            </div>
-        </div>
-    </header>
+    <!-- Header -->
+    {% include 'partials/header.html' %}
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu__header">
-            <div class="header__logo">H&G</div>
-            <button class="mobile-menu__close" id="mobileMenuClose"><i class="fas fa-times"></i></button>
-        </div>
-        <nav class="mobile-menu__nav">
-            <a href="../../index.html" class="mobile-menu__nav-link">Home</a>
-            <a href="index.html" class="mobile-menu__nav-link">Shop</a>
-            <a href="../content/about.html" class="mobile-menu__nav-link">About</a>
-            <a href="../content/blog.html" class="mobile-menu__nav-link">Blog</a>
-            <a href="../content/contact.html" class="mobile-menu__nav-link">Contact</a>
-        </nav>
-    </div>
-    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    {% include 'partials/mobile_menu.html' %}
 
     <!-- Breadcrumb -->
     <section class="breadcrumb">
         <div class="container">
             <div class="breadcrumb__container">
-                <span class="breadcrumb__item"><a href="../../index.html">Home</a></span>
+                <span class="breadcrumb__item"><a href="{% url 'home' %}">Home</a></span>
                 <span class="breadcrumb__item active">Shop</span>
             </div>
         </div>
@@ -99,26 +59,13 @@
                                     <input type="checkbox" name="category" value="all" checked> All Products
                                 </label>
                             </li>
+                            {% for category in categories %}
                             <li>
                                 <label>
-                                    <input type="checkbox" name="category" value="jewelry"> Jewelry
+                                    <input type="checkbox" name="category" value="{{ category.slug }}"> {{ category.name }}
                                 </label>
                             </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="category" value="pottery"> Pottery
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="category" value="fabric"> Fabric
-                                </label>
-                            </li>
-                            <li>
-                                <label>
-                                    <input type="checkbox" name="category" value="accessories"> Accessories
-                                </label>
-                            </li>
+                            {% endfor %}
                         </ul>
                     </div>
 
@@ -126,10 +73,10 @@
                     <div class="filter-widget">
                         <h4>Price Range</h4>
                         <div class="price-range">
-                            <input type="range" id="priceRange" min="0" max="100" value="100" step="5">
+                            <input type="range" id="priceRange" min="0" max="{{ max_price }}" value="{{ max_price }}" step="5">
                             <div class="price-values">
                                 <span id="minPrice">$0</span>
-                                <span id="maxPrice">$100</span>
+                                <span id="maxPrice">${{ max_price }}</span>
                             </div>
                             <input type="hidden" id="minPriceInput" value="0">
                         </div>
@@ -140,17 +87,19 @@
                 <div class="shop-main">
                     <!-- Shop Header -->
                     <div class="shop-header">
-                        <div class="result-count">Showing all products</div>
+                        <div class="result-count">Showing {{ products.count }} products</div>
                         <div class="shop-controls">
-                            <select id="sortSelect" class="form-select">
-                                <option value="">Default sorting</option>
-                                <option value="price-low">Price: Low to High</option>
-                                <option value="price-high">Price: High to Low</option>
-                                <option value="name-asc">Name: A to Z</option>
-                                <option value="name-desc">Name: Z to A</option>
-                                <option value="rating">Top Rated</option>
-                                <option value="newest">Newest</option>
-                            </select>
+                            <form method="get" id="sortForm">
+                                <select name="sort" id="sortSelect" class="form-select" onchange="this.form.submit()">
+                                    <option value="">Default sorting</option>
+                                    <option value="price-low" {% if request.GET.sort == 'price-low' %}selected{% endif %}>Price: Low to High</option>
+                                    <option value="price-high" {% if request.GET.sort == 'price-high' %}selected{% endif %}>Price: High to Low</option>
+                                    <option value="name-asc" {% if request.GET.sort == 'name-asc' %}selected{% endif %}>Name: A to Z</option>
+                                    <option value="name-desc" {% if request.GET.sort == 'name-desc' %}selected{% endif %}>Name: Z to A</option>
+                                    <option value="rating" {% if request.GET.sort == 'rating' %}selected{% endif %}>Top Rated</option>
+                                    <option value="newest" {% if request.GET.sort == 'newest' %}selected{% endif %}>Newest</option>
+                                </select>
+                            </form>
 
                             <div class="view-toggle">
                                 <button class="active"><i class="fas fa-th"></i></button>
@@ -161,59 +110,38 @@
 
                     <!-- Product Grid -->
                     <div class="product-grid" id="shopProductGrid">
-                        <!-- Products will be dynamically inserted here -->
+                        {% if products %}
+                            {% for product in products %}
+                            <div class="product-item">
+                                <a href="{% url 'product_detail' product.slug %}">
+                                    {% if product.image %}
+                                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                                    {% else %}
+                                        <img src="{% static 'images/placeholder.png' %}" alt="No Image">
+                                    {% endif %}
+                                    <h3>{{ product.name }}</h3>
+                                </a>
+                                <div class="price">
+                                    {% if product.discount_price %}
+                                        <span class="old-price">${{ product.price }}</span>
+                                        <span class="new-price">${{ product.discount_price }}</span>
+                                    {% else %}
+                                        <span class="new-price">${{ product.price }}</span>
+                                    {% endif %}
+                                </div>
+                                <button class="btn btn-outline-primary add-to-cart" data-product-id="{{ product.id }}">Add to Cart</button>
+                            </div>
+                            {% endfor %}
+                        {% else %}
+                            <p>No products found.</p>
+                        {% endif %}
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__container">
-                <div class="footer__column">
-                    <h4>About H&G</h4>
-                    <p>We are passionate about bringing you the finest handmade goods from talented artisans around the world.</p>
-                    <div class="footer__social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                    </div>
-                </div>
-
-                <div class="footer__column">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Shop</a></li>
-                        <li><a href="../content/about.html">About Us</a></li>
-                        <li><a href="../content/blog.html">Blog</a></li>
-                        <li><a href="../content/contact.html">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer__column">
-                    <h4>Customer Service</h4>
-                    <ul>
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">Track Order</a></li>
-                        <li><a href="#">Shipping Info</a></li>
-                        <li><a href="#">Returns</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer__column footer__newsletter">
-                    <h4>Stay Connected</h4>
-                    <p>Subscribe to get special offers and updates</p>
-                    <form class="form-group">
-                        <input type="email" placeholder="Your email" required>
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-
+               <!-- Footer Bottom -->
             <div class="footer__bottom">
                 <p>&copy; 2024 H&G Handmade Goods. All rights reserved.</p>
                 <div class="footer__payment">
@@ -230,31 +158,43 @@
     <div class="cart-offcanvas" id="cartOffcanvas">
         <div class="cart-offcanvas__header">
             <h3>Shopping Cart</h3>
-            <button class="cart-offcanvas__close" id="cartClose"><i class="fas fa-times"></i></button>
+            <button class="cart-offcanvas__close" id="cartClose">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
+
         <div class="cart-offcanvas__body" id="cartBody">
+            <!-- Cart items will be dynamically inserted here -->
             <div class="cart-offcanvas__empty">
                 <i class="fas fa-shopping-cart"></i>
                 <p>Your cart is empty</p>
             </div>
         </div>
+
         <div class="cart-offcanvas__footer" id="cartFooter" style="display: none;">
             <div class="cart-offcanvas__subtotal">
                 <span>Subtotal:</span>
                 <span class="amount" id="cartSubtotal">$0.00</span>
             </div>
-            <a href="../cart/index.html" class="btn btn-outline-primary btn-block mb-2">View Cart</a>
-            <a href="../cart/checkout.html" class="btn btn-primary btn-block">Checkout</a>
+            <a href="{% url 'shop:cart' %}">
+ class="btn btn-outline-primary btn-block mb-2">View Cart</a>
+            <a href="{% url 'shop:checkout' %}">
+ class="btn btn-primary btn-block">Checkout</a>
         </div>
     </div>
 
+    <!-- Modal Backdrop (for cart offcanvas) -->
     <div class="modal-backdrop" id="cartBackdrop"></div>
 
     <!-- Quick View Modal -->
     <div class="modal-backdrop" id="quickViewBackdrop"></div>
     <div class="quick-view-modal" id="quickViewModal">
-        <button class="quick-view-modal__close" id="quickViewClose"><i class="fas fa-times"></i></button>
-        <div class="quick-view-modal__content" id="quickViewContent"></div>
+        <button class="quick-view-modal__close" id="quickViewClose">
+            <i class="fas fa-times"></i>
+        </button>
+        <div class="quick-view-modal__content" id="quickViewContent">
+            <!-- Product details will be dynamically inserted here -->
+        </div>
     </div>
 
     <!-- Auth Modal (Login/Register) -->
@@ -389,20 +329,35 @@
     </div>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <script src="{% static 'shop/assets/js/utils/storage.js' %}"></script>
 
-    <!-- Custom JavaScript -->
-    <script src="../../assets/js/utils/storage.js"></script>
-    <script src="../../assets/js/utils/helpers.js"></script>
-    <script src="../../assets/js/components/navigation.js"></script>
-    <script src="../../assets/js/components/cart.js"></script>
-    <script src="../../assets/js/components/wishlist.js"></script>
-    <script src="../../assets/js/components/productGrid.js"></script>
-    <script src="../../assets/js/components/filters.js"></script>
-    <script src="../../assets/js/components/quickView.js"></script>
-    <script src="../../assets/js/components/newsletter.js"></script>
-    <script src="../../assets/js/components/auth.js"></script>
-    <script src="../../assets/js/components/search.js"></script>
-    <script src="../../assets/js/main.js"></script>
+        <script src="{% static 'shop/assets/js/utils/helpers.js' %}"></script>
+
+        <script src="{% static 'shop/assets/js/utils/dataManager.js' %}"></script>
+
+
+        <script src="{% static 'shop/assets/js/components/navigation.js' %}"></script>
+
+        <script src="{% static 'shop/assets/js/components/heroSlider.js' %}"></script>
+
+        <script src="{% static 'shop/assets/js/components/cart.js' %}"></script>
+
+        <script src="{% static 'shop/assets/js/components/wishlist.js' %}"></script>
+
+        <script src="{% static 'shop/assets/js/components/productGrid.js' %}"></script>
+
+        <script src="{% static 'shop/assets/js/components/filters.js' %}"></script>
+
+        <script src="{% static 'shop/assets/js/components/quickView.js' %}"></script>
+
+        <script src="{% static 'shop/assets/js/components/newsletter.js' %}"></script>
+
+        <script src="{% static 'shop/assets/js/components/auth.js' %}"></script>
+
+        <script src="{% static 'shop/assets/js/components/search.js' %}"></script>
+
+
 </body>
 </html>
