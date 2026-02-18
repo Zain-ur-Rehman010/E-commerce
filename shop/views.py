@@ -27,7 +27,6 @@ def product_list(request, category_slug=None):
         category = get_object_or_404(Category, slug=category_slug)
         products = products.filter(category=category)
     
-    # Aapka manga hua path: shop/templates/shop/pages/shop/index.html
     return render(request, 'shop/pages/shop/index.html', {
         'category': category, 
         'categories': categories, 
