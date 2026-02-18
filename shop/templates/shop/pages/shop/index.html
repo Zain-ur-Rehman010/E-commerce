@@ -4,25 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Shop handmade goods - Browse our full collection of artisan products">
-    <title>Shop - H&G Handmade Goods</title>
+    <meta name="description" content="H&G - Handmade Goods eCommerce Store. Discover unique handcrafted jewelry, pottery, fabric items and accessories.">
+    <title>H&G - Handmade Goods</title>
 
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="{% static 'images/favicon.svg' %}">
-    <link rel="apple-touch-icon" href="{% static 'images/favicon.svg' %}">
+    <link rel="icon" type="image/svg+xml" href="{% static 'shop/assets/images/favicon.svg' %}">
+    <link rel="apple-touch-icon" href="{% static 'shop/assets/images/favicon.svg' %}">
 
-    <!-- Bootstrap CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'shop/assets/css/styles.css' %}">
 </head>
-<body class="shop-page">
+<body class="homepage">
 
-<header class="header">
+    <header class="header">
         <div class="container">
             <div class="header__container">
                 <a href="{% url 'shop:product_list' %}" class="header__logo">
@@ -30,7 +29,7 @@
                 </a>
 
                 <nav class="header__nav">
-                    <a href="{% url 'shop:product_list' %}" class="header__nav-link active">Home</a>
+                    <a href="{% url 'shop:home' %}">Home</a>
                     <a href="{% url 'shop:product_list' %}" class="header__nav-link">Shop</a>
                     <a href="{% url 'shop:about' %}" class="header__nav-link">About</a>
                     <a href="{% url 'shop:blog' %}" class="header__nav-link">Blog</a>
@@ -72,8 +71,8 @@
             </button>
         </div>
         <nav class="mobile-menu__nav">
-            <a href="{% url 'shop:product_list' %}" class="mobile-menu__nav-link">Home</a>
-            <a href="#" class="mobile-menu__nav-link">Shop</a>
+            <a href="{% url 'shop:home' %}" class="mobile-menu__nav-link">Home</a>
+            <a href="{% url 'shop:product_list' %}" class="mobile-menu__nav-link">Shop</a>
             <a href="{% url 'shop:about' %}" class="mobile-menu__nav-link">About</a>
             <a href="{% url 'shop:blog' %}" class="mobile-menu__nav-link">Blog</a>
             <a href="{% url 'shop:contact' %}" class="mobile-menu__nav-link">Contact</a>
