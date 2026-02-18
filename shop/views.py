@@ -33,6 +33,15 @@ def about(request):
 def contact(request):
     return render(request, 'shop/pages/content/contact.html')
 
-# Function ka naam 'blog' rakha hai takay urls.py se match kare
+
 def blog(request):
     return render(request, 'shop/pages/content/blog.html')
+
+def product_list(request, category_slug=None):
+    # ... baki code ...
+    # Path ko GitHub folder structure ke mutabiq sahi karein
+    return render(request, 'shop/pages/shop/index.html', {
+        'category': category, 
+        'categories': categories, 
+        'products': products
+    })
