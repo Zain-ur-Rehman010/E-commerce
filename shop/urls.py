@@ -9,6 +9,7 @@ urlpatterns = [
     
     # Static Content Pages
     path('about/', views.about, name='about'),
+    path('', views.home, name='home'),
     path('contact/', views.contact, name='contact'),
     # Yahan 'blog' rakhein kyunke views mein hum 'blog' function banayenge
     path('blog/', views.blog, name='blog'),
