@@ -80,7 +80,7 @@
                     Every product tells a story — from the careful selection of materials
                     to the final handcrafted details.
                 </p>
-                <a href="{% url 'shop' %}" class="btn btn-primary mt-3">Shop Now</a>
+                <a href="{% url 'shop:product_list' %}" class="btn btn-primary mt-3">Shop Now</a>
             </div>
 
         </div>
@@ -123,7 +123,7 @@
     <div class="container">
         <h2 class="mb-3">Want to Get in Touch?</h2>
         <p>We’d love to hear from you.</p>
-        <a href="{% url 'contact' %}" class="btn btn-outline-primary">Contact Us</a>
+        <a href="{% url 'shop:contact' %}" class="btn btn-outline-primary">Contact Us</a>
     </div>
 </section>
 
@@ -135,12 +135,15 @@
         <p class="mb-2">&copy; 2025 H&G Handmade Goods. All rights reserved.</p>
 
         <div>
-            <a href="{% url 'shop' %}" class="text-white me-3">Shop</a>
-            <a href="{% url 'about' %}" class="text-white me-3">About</a>
-            <a href="{% url 'blog' %}" class="text-white me-3">Blog</a>
-            <a href="{% url 'contact' %}" class="text-white">Contact</a>
-        </div>
+            <a href="{% url 'shop:product_list' %}" class="text-white me-3">Shop</a>
 
+            <a href="{% url 'shop:about' %}" class="text-white me-3">About</a>
+    
+            <a href="{% url 'shop:blog' %}" class="text-white me-3">Blog</a>
+    
+            <a href="{% url 'shop:contact' %}" class="text-white">Contact</a>
+
+        </div>
     </div>
 </footer>
 
