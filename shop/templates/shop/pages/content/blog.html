@@ -4,147 +4,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About H&G - Learn about our passion for handmade goods and the artisans behind our unique products.">
-    <title>About Us - H&G Handmade Goods</title>
+    <title>Blog - H&G Handmade Store</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="{% static 'assets/images/favicon.svg' %}">
     <link rel="apple-touch-icon" href="{% static 'assets/images/favicon.svg' %}">
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link rel="icon" type="image/svg+xml" href="{% static 'shop/assets/images/favicon.svg' %}">
-    <link rel="apple-touch-icon" href="{% static 'shop/assets/images/favicon.svg' %}">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{% static 'shop/assets/css/styles.css' %}">
 </head>
-<body class="about-page">
 
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header__container">
-                <!-- Logo -->
-                <a href="{% url 'shop:product_list' %}" class="header__logo">H&G</a>
+<body class="blog-page">
 
-                <!-- Main Navigation (Desktop) -->
-                <nav class="header__nav">
+<!-- ================= HEADER ================= -->
+<header class="header">
+    <div class="container">
+        <div class="header__container">
+
+            <!-- Logo -->
+            <a href="{% url 'shop:product_list' %}" class="header__logo">
+                H&G
+            </a>
+
+            <!-- Desktop Navigation -->
+            <nav class="header__nav">
                 <a href="{% url 'shop:product_list' %}" class="header__nav-link">Home</a>
                 <a href="{% url 'shop:product_list' %}" class="header__nav-link">Shop</a>
-                <a href="{% url 'shop:about' %}" class="header__nav-link active">About</a>
-                <a href="{% url 'shop:blog' %}" class="header__nav-link">Blog</a>
+                <a href="{% url 'shop:about' %}" class="header__nav-link">About</a>
+                <a href="{% url 'shop:blog' %}" class="header__nav-link active">Blog</a>
                 <a href="{% url 'shop:contact' %}" class="header__nav-link">Contact</a>
             </nav>
 
-                <!-- Header Actions -->
-                <div class="header__actions">
-                    <!-- Search -->
-                    <button class="header__action-btn" id="searchBtn" aria-label="Search">
-                        <i class="fas fa-search"></i>
-                    </button>
-
-                    <!-- Account -->
-                    <button class="header__action-btn" id="accountBtn" aria-label="My Account">
-                        <i class="fas fa-user"></i>
-                    </button>
-
-                    <!-- Wishlist -->
-                    <button class="header__action-btn" id="wishlistBtn" aria-label="Wishlist">
-                        <i class="fas fa-heart"></i>
-                        <span class="header__badge" id="wishlistCount">0</span>
-                    </button>
-
-                    <!-- Cart -->
-                    <button class="header__action-btn" id="cartBtn" aria-label="Shopping Cart">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="header__badge" id="cartCount">0</span>
-                    </button>
-
-                    <!-- Mobile Menu Toggle -->
-                    <button class="header__mobile-toggle" id="mobileMenuToggle" aria-label="Toggle Menu">
-                        <i class="fas fa-bars"></i>
-                    </button>
-                </div>
+            <!-- Header Actions -->
+            <div class="header__actions">
+                <button class="header__action-btn"><i class="fas fa-search"></i></button>
+                <button class="header__action-btn"><i class="fas fa-user"></i></button>
+                <button class="header__action-btn">
+                    <i class="fas fa-heart"></i>
+                    <span class="header__badge">0</span>
+                </button>
+                <button class="header__action-btn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="header__badge">0</span>
+                </button>
+                <button class="header__mobile-toggle">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
-        </div>
-    </header>
 
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu__header">
-            <div class="header__logo">H&G</div>
-            <button class="mobile-menu__close" id="mobileMenuClose">
-                <i class="fas fa-times"></i>
-            </button>
         </div>
-        <nav class="header__nav">
-                <a href="{% url 'shop:product_list' %}" class="header__nav-link">Home</a>
-                <a href="{% url 'shop:product_list' %}" class="header__nav-link">Shop</a>
-                <a href="{% url 'shop:about' %}" class="header__nav-link active">About</a>
-                <a href="{% url 'shop:blog' %}" class="header__nav-link">Blog</a>
-                <a href="{% url 'shop:contact' %}" class="header__nav-link">Contact</a>
-            </nav>
     </div>
-    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+</header>
 
-  <main>
-    <!-- Page Hero -->
-    <section class="blog-hero">
-      <div class="container">
-        <div class="blog-hero__content">
-          <span class="blog-hero__label">Our Blog</span>
-          <h1>Craft Stories & Inspiration</h1>
-          <p>Discover the art of handmade living. Tips, tutorials, artisan stories, and creative inspiration for your home.</p>
+
+<!-- ================= HERO SECTION ================= -->
+<main>
+
+<section class="blog-hero">
+    <div class="container">
+        <div class="blog-hero__content text-center">
+            <span class="blog-hero__label">Our Blog</span>
+            <h1>Craft Stories & Inspiration</h1>
+            <p>
+                Discover the art of handmade living. Tips, tutorials,
+                artisan stories, and creative inspiration for your home.
+            </p>
         </div>
-      </div>
-      <div class="blog-hero__shapes">
-        <div class="shape shape--1"></div>
-        <div class="shape shape--2"></div>
-        <div class="shape shape--3"></div>
-      </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Featured Post -->
-    <section class="blog-featured py-5">
-      <div class="container">
+
+<!-- ================= FEATURED POST ================= -->
+<section class="blog-featured py-5">
+    <div class="container">
         <div class="featured-post">
-          <div class="row g-0 align-items-center">
-            <div class="col-lg-7">
-              <div class="featured-post__image">
-                <img src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=800" alt="Featured Post">
-                <span class="featured-post__badge">Featured</span>
-              </div>
-            </div>
-            <div class="col-lg-5">
-              <div class="featured-post__content">
-                <div class="featured-post__meta">
-                  <span class="category">Crafting Tips</span>
-                  <span class="date"><i class="far fa-calendar-alt"></i> Dec 20, 2025</span>
+            <div class="row align-items-center">
+
+                <!-- Image -->
+                <div class="col-lg-7 mb-4 mb-lg-0">
+                    <div class="featured-post__image">
+                        <img src="https://images.unsplash.com/photo-1452860606245-08befc0ff44b?w=800"
+                             class="img-fluid rounded"
+                             alt="Featured Post">
+                        <span class="featured-post__badge">Featured</span>
+                    </div>
                 </div>
-                <h2>The Art of Handmade: Why Artisan Products Matter More Than Ever</h2>
-                <p>In a world of mass production, discover why choosing handmade items creates meaningful connections and supports sustainable living. Learn how each piece tells a unique story.</p>
-                <div class="featured-post__author">
-                  <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100" alt="Author">
-                  <div class="author-info">
-                    <span class="name">Sarah Mitchell</span>
-                    <span class="role">Creative Director</span>
-                  </div>
+
+                <!-- Content -->
+                <div class="col-lg-5">
+                    <div class="featured-post__content">
+                        <div class="featured-post__meta mb-2">
+                            <span class="category">Crafting Tips</span>
+                            <span class="date ms-3">
+                                <i class="far fa-calendar-alt"></i>
+                                Dec 20, 2025
+                            </span>
+                        </div>
+
+                        <h2 class="mb-3">
+                            The Art of Handmade: Why Artisan Products Matter More Than Ever
+                        </h2>
+
+                        <p>
+                            In a world of mass production, discover why choosing handmade items
+                            creates meaningful connections and supports sustainable living.
+                            Learn how each piece tells a unique story.
+                        </p>
+
+                        <div class="featured-post__author d-flex align-items-center mt-3">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100"
+                                 class="rounded-circle me-3"
+                                 width="50"
+                                 alt="Author">
+
+                            <div>
+                                <strong>Sarah Mitchell</strong><br>
+                                <small class="text-muted">Creative Director</small>
+                            </div>
+                        </div>
+
+                        <a href="#" class="btn btn-primary mt-4">
+                            Read Article <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
                 </div>
-                <a href="#" class="btn btn-primary">Read Article <i class="fas fa-arrow-right ms-2"></i></a>
-              </div>
+
             </div>
-          </div>
         </div>
-      </div>
-    </section>
+    </div>
+</section>
+
 
     <!-- Blog Categories Filter -->
     <section class="blog-categories">
