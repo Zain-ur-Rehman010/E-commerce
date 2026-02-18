@@ -52,3 +52,8 @@ def product_list(request, category_slug=None):
         'categories': categories, 
         'products': products
     })
+
+def home(request):
+    # Agar aap Home page par bhi kuch products dikhana chahte hain:
+    products = Product.objects.filter(available=True)[:4] # Sirf pehle 4 products
+    return render(request, 'shop/index.html', {'products': products}) # Maan lijiye aapka home page shop folder ke bahar templates mein hai
