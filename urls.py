@@ -8,6 +8,7 @@ urlpatterns = [
     
     # Shop app ka rasta
     path('', include('shop.urls', namespace='shop')),
+    path('', views.home, name='home'),
     
     # Cart aur Orders ke raste badal kar 'shop.cart' aur 'shop.orders' karein
     path('cart/', include('shop.cart.urls', namespace='cart')),
