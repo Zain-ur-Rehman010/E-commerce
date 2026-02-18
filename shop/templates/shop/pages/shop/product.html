@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +8,8 @@
     <title>Product Details - H&G</title>
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="../../assets/images/favicon.svg">
-    <link rel="apple-touch-icon" href="../../assets/images/favicon.svg">
+    <link rel="icon" type="image/svg+xml" href="{% static 'assets/images/favicon.svg' %}">
+    <link rel="apple-touch-icon" href="{% static 'assets/images/favicon.svg' %}">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -17,63 +18,22 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="../../assets/css/styles.css">
+    <link rel="stylesheet" href="{% static 'shop/assets/css/styles.css' %}">
 </head>
 <body class="product-detail-page">
 
     <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header__container">
-                <a href="../../index.html" class="header__logo">H&G</a>
-
-                <nav class="header__nav">
-                    <a href="../../index.html" class="header__nav-link">Home</a>
-                    <a href="index.html" class="header__nav-link">Shop</a>
-                    <a href="../content/about.html" class="header__nav-link">About</a>
-                    <a href="../content/blog.html" class="header__nav-link">Blog</a>
-                    <a href="../content/contact.html" class="header__nav-link">Contact</a>
-                </nav>
-
-                <div class="header__actions">
-                    <button class="header__action-btn" id="searchBtn"><i class="fas fa-search"></i></button>
-                    <button class="header__action-btn" id="accountBtn"><i class="fas fa-user"></i></button>
-                    <button class="header__action-btn" id="wishlistBtn">
-                        <i class="fas fa-heart"></i>
-                        <span class="header__badge" id="wishlistCount">0</span>
-                    </button>
-                    <button class="header__action-btn" id="cartBtn">
-                        <i class="fas fa-shopping-cart"></i>
-                        <span class="header__badge" id="cartCount">0</span>
-                    </button>
-                    <button class="header__mobile-toggle" id="mobileMenuToggle"><i class="fas fa-bars"></i></button>
-                </div>
-            </div>
-        </div>
-    </header>
+    {% include 'shop/includes/header.html' %}
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-        <div class="mobile-menu__header">
-            <div class="header__logo">H&G</div>
-            <button class="mobile-menu__close" id="mobileMenuClose"><i class="fas fa-times"></i></button>
-        </div>
-        <nav class="mobile-menu__nav">
-            <a href="../../index.html" class="mobile-menu__nav-link">Home</a>
-            <a href="index.html" class="mobile-menu__nav-link">Shop</a>
-            <a href="../content/about.html" class="mobile-menu__nav-link">About</a>
-            <a href="../content/blog.html" class="mobile-menu__nav-link">Blog</a>
-            <a href="../content/contact.html" class="mobile-menu__nav-link">Contact</a>
-        </nav>
-    </div>
-    <div class="mobile-menu-overlay" id="mobileMenuOverlay"></div>
+    {% include 'shop/includes/mobile_menu.html' %}
 
     <!-- Breadcrumb -->
     <section class="breadcrumb">
         <div class="container">
             <div class="breadcrumb__container">
-                <span class="breadcrumb__item"><a href="../../index.html">Home</a></span>
-                <span class="breadcrumb__item"><a href="index.html">Shop</a></span>
+                <span class="breadcrumb__item"><a href="{% url 'shop:product_list' %}">Home</a></span>
+                <span class="breadcrumb__item"><a href="{% url 'shop:product_list' %}">Shop</a></span>
                 <span class="breadcrumb__item active">Product Details</span>
             </div>
         </div>
@@ -83,18 +43,20 @@
     <section class="section">
         <div class="container">
             <div class="product-detail">
-                <!-- Product Gallery - Will be populated by JavaScript -->
+                <!-- Product Gallery -->
                 <div class="product-detail__gallery">
                     <div class="loading-spinner">
                         <div class="spinner"></div>
                     </div>
+                    <!-- Images will be dynamically loaded via JS -->
                 </div>
 
-                <!-- Product Info - Will be populated by JavaScript -->
+                <!-- Product Info -->
                 <div class="product-detail__info">
                     <div class="loading-spinner">
                         <div class="spinner"></div>
                     </div>
+                    <!-- Product info dynamically loaded via JS -->
                 </div>
             </div>
 
@@ -139,7 +101,6 @@
                             <span id="reviewCount">No reviews yet</span>
                         </div>
                     </div>
-
                     <div class="alert alert-info">
                         <i class="fas fa-info-circle"></i> Review functionality will be available soon!
                     </div>
@@ -153,82 +114,100 @@
                     <p>You may also like these products</p>
                 </div>
                 <div class="product-grid" id="relatedProducts">
-                    <!-- Related products will be loaded by JavaScript -->
+                    <!-- Related products dynamically loaded via JS -->
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    !-- CTA Section -->
+    <section class="section about-cta">
         <div class="container">
-            <div class="footer__container">
-                <div class="footer__column">
-                    <h4>About H&G</h4>
-                    <p>We are passionate about bringing you the finest handmade goods from talented artisans around the world.</p>
-                    <div class="footer__social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-pinterest"></i></a>
-                    </div>
-                </div>
-
-                <div class="footer__column">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Shop</a></li>
-                        <li><a href="../content/about.html">About Us</a></li>
-                        <li><a href="../content/blog.html">Blog</a></li>
-                        <li><a href="../content/contact.html">Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer__column">
-                    <h4>Customer Service</h4>
-                    <ul>
-                        <li><a href="#">My Account</a></li>
-                        <li><a href="#">Track Order</a></li>
-                        <li><a href="#">Shipping Info</a></li>
-                        <li><a href="#">Returns</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer__column footer__newsletter">
-                    <h4>Stay Connected</h4>
-                    <p>Subscribe to get special offers and updates</p>
-                    <form class="form-group">
-                        <input type="email" placeholder="Your email" required>
-                        <button type="submit" class="btn btn-primary">Subscribe</button>
-                    </form>
-                </div>
-            </div>
-
-            <div class="footer__bottom">
-                <p>&copy; 2024 H&G Handmade Goods. All rights reserved.</p>
-                <div class="footer__payment">
-                    <i class="fab fa-cc-visa" style="font-size: 2rem; color: #fff;"></i>
-                    <i class="fab fa-cc-mastercard" style="font-size: 2rem; color: #fff;"></i>
-                    <i class="fab fa-cc-amex" style="font-size: 2rem; color: #fff;"></i>
-                    <i class="fab fa-cc-paypal" style="font-size: 2rem; color: #fff;"></i>
+            <div class="about-cta__content">
+                <h2>Join Our Artisan Community</h2>
+                <p>Are you a skilled craftsperson? We'd love to feature your work on H&G and help you reach customers who truly appreciate handmade goods.</p>
+                <div class="about-cta__buttons">
+                    <a href="{% url 'shop:contact' %}" class="btn btn-primary btn-lg me-2">Become an Artisan</a>
+                
+                    <a href="{% url 'shop:product_list' %}" class="btn btn-outline-light btn-lg">Shop Collection</a>
                 </div>
             </div>
         </div>
-    </footer>
+    </section>
 
+    <footer class="footer">
+    <div class="container">
+        <div class="footer__container">
+            <div class="footer__column">
+                <h4>About H&G</h4>
+                <p>We are passionate about bringing you the finest handmade goods from talented artisans around the world.</p>
+                <div class="footer__social">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+                </div>
+            </div>
+
+            <div class="footer__column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="{% url 'shop:product_list' %}">Shop</a></li>
+                    <li><a href="{% url 'shop:about' %}">About Us</a></li>
+                    <li><a href="{% url 'shop:blog' %}">Blog</a></li>
+                    <li><a href="{% url 'shop:contact' %}">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__column">
+                <h4>Customer Service</h4>
+                <ul>
+                    <li><a href="#">My Account</a></li>
+                    <li><a href="#">Track Order</a></li>
+                    <li><a href="#">Shipping Info</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">FAQ</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__column footer__newsletter">
+                <h4>Stay Connected</h4>
+                <p>Subscribe to get special offers and updates</p>
+                <form class="form-group">
+                    <input type="email" placeholder="Your email" required>
+                    <button type="submit" class="btn btn-primary">Subscribe</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <p>&copy; 2026 H&G Handmade Goods. All rights reserved.</p>
+            <div class="footer__payment">
+                <i class="fab fa-cc-visa" style="font-size: 2rem; color: #fff;"></i>
+                <i class="fab fa-cc-mastercard" style="font-size: 2rem; color: #fff;"></i>
+                <i class="fab fa-cc-amex" style="font-size: 2rem; color: #fff;"></i>
+                <i class="fab fa-cc-paypal" style="font-size: 2rem; color: #fff;"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+    
     <!-- Cart Offcanvas -->
     <div class="cart-offcanvas" id="cartOffcanvas">
         <div class="cart-offcanvas__header">
             <h3>Shopping Cart</h3>
-            <button class="cart-offcanvas__close" id="cartClose"><i class="fas fa-times"></i></button>
+            <button class="cart-offcanvas__close" id="cartClose">
+                <i class="fas fa-times"></i>
+            </button>
         </div>
+
         <div class="cart-offcanvas__body" id="cartBody">
             <div class="cart-offcanvas__empty">
                 <i class="fas fa-shopping-cart"></i>
                 <p>Your cart is empty</p>
             </div>
         </div>
+
         <div class="cart-offcanvas__footer" id="cartFooter" style="display: none;">
             <div class="cart-offcanvas__subtotal">
                 <span>Subtotal:</span>
@@ -239,6 +218,7 @@
         </div>
     </div>
 
+    <!-- Modal Backdrop -->
     <div class="modal-backdrop" id="cartBackdrop"></div>
 
     <!-- Auth Modal (Login/Register) -->
@@ -372,42 +352,54 @@
         </div>
     </div>
 
+
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <script src="{% static 'shop/assets/js/utils/storage.js' %}"></script>
 
-    <!-- Custom JavaScript -->
-    <script src="../../assets/js/utils/storage.js"></script>
-    <script src="../../assets/js/utils/helpers.js"></script>
-    <script src="../../assets/js/components/navigation.js"></script>
-    <script src="../../assets/js/components/cart.js"></script>
-    <script src="../../assets/js/components/wishlist.js"></script>
-    <script src="../../assets/js/components/productGrid.js"></script>
-    <script src="../../assets/js/components/filters.js"></script>
-    <script src="../../assets/js/components/newsletter.js"></script>
-    <script src="../../assets/js/components/auth.js"></script>
-    <script src="../../assets/js/components/search.js"></script>
-    <script src="../../assets/js/main.js"></script>
+        <script src="{% static 'shop/assets/js/utils/helpers.js' %}"></script>
 
+        <script src="{% static 'shop/assets/js/utils/dataManager.js' %}"></script>
+
+
+        <script src="{% static 'shop/assets/js/components/navigation.js' %}"></script>
+
+        <script src="{% static 'shop/assets/js/components/heroSlider.js' %}"></script>
+
+        <script src="{% static 'shop/assets/js/components/cart.js' %}"></script>
+
+        <script src="{% static 'shop/assets/js/components/wishlist.js' %}"></script>
+
+        <script src="{% static 'shop/assets/js/components/productGrid.js' %}"></script>
+
+        <script src="{% static 'shop/assets/js/components/filters.js' %}"></script>
+
+        <script src="{% static 'shop/assets/js/components/quickView.js' %}"></script>
+
+        <script src="{% static 'shop/assets/js/components/newsletter.js' %}"></script>
+
+        <script src="{% static 'shop/assets/js/components/auth.js' %}"></script>
+
+        <script src="{% static 'shop/assets/js/components/search.js' %}"></script>
     <script>
-        // Product tabs functionality
         document.addEventListener('DOMContentLoaded', () => {
             const tabButtons = document.querySelectorAll('.tab-nav button');
             const tabContents = document.querySelectorAll('.tab-content');
 
-            tabButtons.forEach(button => {
-                button.addEventListener('click', () => {
-                    const targetTab = button.dataset.tab;
-
-                    // Remove active class from all buttons and contents
-                    tabButtons.forEach(btn => btn.classList.remove('active'));
-                    tabContents.forEach(content => content.classList.remove('active'));
-
-                    // Add active class to clicked button and corresponding content
-                    button.classList.add('active');
-                    document.getElementById(targetTab).classList.add('active');
-                });
-            });
+    tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const targetTab = button.dataset.tab;
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            button.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
         });
-    </script>
+    });
+});
+</script>
+
+
 </body>
 </html>
+       
