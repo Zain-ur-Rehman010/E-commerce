@@ -1,10 +1,10 @@
-﻿[
+[
 {
   "model": "shop.category",
-  "pk": 1,
+  "pk": 4,
   "fields": {
-    "name": "Electronics",
-    "slug": "electronics"
+    "name": "Books",
+    "slug": "books"
   }
 },
 {
@@ -17,82 +17,18 @@
 },
 {
   "model": "shop.category",
-  "pk": 3,
+  "pk": 1,
   "fields": {
-    "name": "Home & Garden",
-    "slug": "home-garden"
+    "name": "Electronics",
+    "slug": "electronics"
   }
 },
 {
   "model": "shop.category",
-  "pk": 4,
-  "fields": {
-    "name": "Books",
-    "slug": "books"
-  }
-},
-{
-  "model": "shop.product",
-  "pk": 1,
-  "fields": {
-    "category": 1,
-    "name": "MacBook Pro 16\"",
-    "slug": "macbook-pro-16",
-    "image": "products/2026/02/20/macbook-pro-16_HI1Qb4r.jpg",
-    "description": "Powerful laptop with M2 Pro chip, 16GB RAM, 512GB SSD.",
-    "price": "2499.99",
-    "stock": 10,
-    "available": true,
-    "created": "2026-02-19T10:53:26.760Z",
-    "updated": "2026-02-20T05:21:08.938Z"
-  }
-},
-{
-  "model": "shop.product",
-  "pk": 2,
-  "fields": {
-    "category": 1,
-    "name": "iPhone 15 Pro",
-    "slug": "iphone-15-pro",
-    "image": "products/2026/02/20/iphone-15-pro_GzoGDHQ.jpg",
-    "description": "Latest iPhone with A17 Pro chip and titanium design.",
-    "price": "999.99",
-    "stock": 10,
-    "available": true,
-    "created": "2026-02-19T10:53:26.760Z",
-    "updated": "2026-02-20T05:21:14.773Z"
-  }
-},
-{
-  "model": "shop.product",
   "pk": 3,
   "fields": {
-    "category": 1,
-    "name": "Sony WH-1000XM5",
-    "slug": "sony-wh-1000xm5",
-    "image": "products/2026/02/20/sony-wh-1000xm5_87Jc6vc.jpg",
-    "description": "Industry-leading noise canceling headphones.",
-    "price": "399.99",
-    "stock": 10,
-    "available": true,
-    "created": "2026-02-19T10:53:26.760Z",
-    "updated": "2026-02-20T05:21:12.009Z"
-  }
-},
-{
-  "model": "shop.product",
-  "pk": 4,
-  "fields": {
-    "category": 1,
-    "name": "iPad Air",
-    "slug": "ipad-air",
-    "image": "products/2026/02/20/ipad-air.jpg",
-    "description": "Powerful tablet with M1 chip and Liquid Retina display.",
-    "price": "599.99",
-    "stock": 10,
-    "available": true,
-    "created": "2026-02-19T10:53:26.760Z",
-    "updated": "2026-02-20T05:21:13.954Z"
+    "name": "Home & Garden",
+    "slug": "home-garden"
   }
 },
 {
@@ -109,6 +45,70 @@
     "available": true,
     "created": "2026-02-19T10:53:26.760Z",
     "updated": "2026-02-20T05:21:04.489Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 10,
+  "fields": {
+    "category": 4,
+    "name": "Clean Code",
+    "slug": "clean-code",
+    "image": "products/2026/02/20/clean-code.jpg",
+    "description": "Essential reading for software developers.",
+    "price": "44.99",
+    "stock": 10,
+    "available": true,
+    "created": "2026-02-19T10:53:26.760Z",
+    "updated": "2026-02-20T05:21:05.557Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 8,
+  "fields": {
+    "category": 3,
+    "name": "Espresso Coffee Machine",
+    "slug": "espresso-coffee-machine",
+    "image": "products/2026/02/20/espresso-coffee-machine.jpg",
+    "description": "Professional-grade espresso machine.",
+    "price": "299.99",
+    "stock": 10,
+    "available": true,
+    "created": "2026-02-19T10:53:26.760Z",
+    "updated": "2026-02-20T05:21:06.994Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 11,
+  "fields": {
+    "category": 4,
+    "name": "Html book",
+    "slug": "html-book",
+    "image": "products/2026/02/20/html-book_PP1FALa.jpg",
+    "description": "html book",
+    "price": "100.00",
+    "stock": 10,
+    "available": true,
+    "created": "2026-02-20T05:07:29.256Z",
+    "updated": "2026-02-20T05:21:07.923Z"
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 1,
+  "fields": {
+    "category": 1,
+    "name": "MacBook Pro 16\"",
+    "slug": "macbook-pro-16",
+    "image": "products/2026/02/20/macbook-pro-16_HI1Qb4r.jpg",
+    "description": "Powerful laptop with M2 Pro chip, 16GB RAM, 512GB SSD.",
+    "price": "2499.99",
+    "stock": 10,
+    "available": true,
+    "created": "2026-02-19T10:53:26.760Z",
+    "updated": "2026-02-20T05:21:08.938Z"
   }
 },
 {
@@ -145,18 +145,18 @@
 },
 {
   "model": "shop.product",
-  "pk": 8,
+  "pk": 3,
   "fields": {
-    "category": 3,
-    "name": "Espresso Coffee Machine",
-    "slug": "espresso-coffee-machine",
-    "image": "products/2026/02/20/espresso-coffee-machine.jpg",
-    "description": "Professional-grade espresso machine.",
-    "price": "299.99",
+    "category": 1,
+    "name": "Sony WH-1000XM5",
+    "slug": "sony-wh-1000xm5",
+    "image": "products/2026/02/20/sony-wh-1000xm5_87Jc6vc.jpg",
+    "description": "Industry-leading noise canceling headphones.",
+    "price": "399.99",
     "stock": 10,
     "available": true,
     "created": "2026-02-19T10:53:26.760Z",
-    "updated": "2026-02-20T05:21:06.994Z"
+    "updated": "2026-02-20T05:21:12.009Z"
   }
 },
 {
@@ -177,34 +177,34 @@
 },
 {
   "model": "shop.product",
-  "pk": 10,
+  "pk": 4,
   "fields": {
-    "category": 4,
-    "name": "Clean Code",
-    "slug": "clean-code",
-    "image": "products/2026/02/20/clean-code.jpg",
-    "description": "Essential reading for software developers.",
-    "price": "44.99",
+    "category": 1,
+    "name": "iPad Air",
+    "slug": "ipad-air",
+    "image": "products/2026/02/20/ipad-air.jpg",
+    "description": "Powerful tablet with M1 chip and Liquid Retina display.",
+    "price": "599.99",
     "stock": 10,
     "available": true,
     "created": "2026-02-19T10:53:26.760Z",
-    "updated": "2026-02-20T05:21:05.557Z"
+    "updated": "2026-02-20T05:21:13.954Z"
   }
 },
 {
   "model": "shop.product",
-  "pk": 11,
+  "pk": 2,
   "fields": {
-    "category": 4,
-    "name": "Html book",
-    "slug": "html-book",
-    "image": "products/2026/02/20/html-book_PP1FALa.jpg",
-    "description": "html book",
-    "price": "100.00",
+    "category": 1,
+    "name": "iPhone 15 Pro",
+    "slug": "iphone-15-pro",
+    "image": "products/2026/02/20/iphone-15-pro_GzoGDHQ.jpg",
+    "description": "Latest iPhone with A17 Pro chip and titanium design.",
+    "price": "999.99",
     "stock": 10,
     "available": true,
-    "created": "2026-02-20T05:07:29.256Z",
-    "updated": "2026-02-20T05:21:07.923Z"
+    "created": "2026-02-19T10:53:26.760Z",
+    "updated": "2026-02-20T05:21:14.773Z"
   }
 }
 ]
