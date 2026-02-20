@@ -31,11 +31,10 @@
             <div class="col-sm-6 col-md-4">
                 <div class="product-card">
                     <div class="product-img-wrap">
-                        {% if product.image %}
-                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                        {% else %}
-                        <i class="fas fa-image no-img"></i>
-                        {% endif %}
+                        <img src="{% get_static_prefix %}shop/images/products/{{ product.slug }}.jpg"
+                             alt="{{ product.name }}"
+                             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <i class="fas fa-image no-img" style="display:none"></i>
                     </div>
                     <div class="product-body">
                         <div class="product-name">{{ product.name }}</div>
