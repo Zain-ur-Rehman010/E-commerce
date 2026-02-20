@@ -1,7 +1,7 @@
 {% extends 'shop/base.html' %}
 {% load static %}
 
-{% block title %}Ipswich Retail - Home{% endblock %}
+{% block title %}{% if category %}{{ category.name }}{% else %}All Products{% endif %} - Ipswich Retail{% endblock %}
 
 {% block content %}
 <div class="row">
@@ -11,11 +11,12 @@
             <div class="sidebar-header">
                 <i class="fas fa-filter me-2"></i>Categories
             </div>
-            <a href="{% url 'shop:product_list' %}" class="sidebar-link active">
+            <a href="{% url 'shop:product_list' %}" class="sidebar-link {% if not category %}active{% endif %}">
                 All Products
             </a>
             {% for cat in categories %}
-            <a href="{% url 'shop:product_list_by_category' cat.slug %}" class="sidebar-link">
+            <a href="{% url 'shop:product_list_by_category' cat.slug %}"
+               class="sidebar-link {% if category.slug == cat.slug %}active{% endif %}">
                 {{ cat.name }}
             </a>
             {% endfor %}
@@ -24,7 +25,10 @@
 
     <!-- Main Content -->
     <div class="col-lg-9">
-        <h1 class="page-heading">All Products</h1>
+        <h1 class="page-heading">
+            {% if category %}{{ category.name }}{% else %}All Products{% endif %}
+        </h1>
+
         {% if products %}
         <div class="row g-3">
             {% for product in products %}
@@ -64,7 +68,8 @@
         {% else %}
         <div class="text-center py-5 text-muted">
             <i class="fas fa-box-open fa-3x mb-3"></i>
-            <p>No products available.</p>
+            <p>No products found in this category.</p>
+            <a href="{% url 'shop:product_list' %}" class="btn btn-primary btn-sm mt-2">View All Products</a>
         </div>
         {% endif %}
     </div>
