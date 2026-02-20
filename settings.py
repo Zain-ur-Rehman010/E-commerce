@@ -22,10 +22,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    'shop.apps.ShopConfig', 
-    
-    'shop.cart',   
+
+    'shop.apps.ShopConfig',
+
+    'shop.cart',
     'shop.orders',
 ]
 
@@ -104,7 +104,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
-
 WHITENOISE_MANIFEST_STRICT = False
 
 MEDIA_URL = '/media/'
@@ -114,7 +113,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CART_SESSION_ID = 'cart'
 
-
 if not DEBUG:
     SECURE_SSL_REDIRECT = True
     SESSION_COOKIE_SECURE = True
@@ -122,4 +120,4 @@ if not DEBUG:
     SECURE_BROWSER_XSS_FILTER = True
     SECURE_CONTENT_TYPE_NOSNIFF = True
     X_FRAME_OPTIONS = 'DENY'
-    CSRF_TRUSTED_ORIGINS = ['https://e-commerce-irq9.onrender.com']
+    CSRF_TRUSTED_ORIGINS = ['https://ipswich-retail.onrender.com']
