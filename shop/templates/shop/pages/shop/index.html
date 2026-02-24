@@ -168,11 +168,9 @@
                             {% for product in products %}
                             <div class="product-item">
                                <a href="{% url 'shop:product_detail' product.id product.slug %}">
-                                    {% if product.image %}
-                                        <img src="{{ product.image.url }}" alt="{{ product.name }}">
-                                    {% else %}
-                                        <img src="{% static 'images/placeholder.png' %}" alt="No Image">
-                                    {% endif %}
+                                    <img src="{% get_static_prefix %}shop/images/products/{{ product.slug }}.jpg"
+                                         alt="{{ product.name }}"
+                                         onerror="this.onerror=null;this.src='{% static 'images/placeholder.png' %}'">
                                     <h3>{{ product.name }}</h3>
                                 </a>
                                 <div class="price">
